@@ -32,5 +32,6 @@ def displayrecord(record, dirlist):
     for de in dirlist:
         print(de[0])
         print(record[current + de[2]:current + de[2] + de[1]])
+        print("\n")
 
 displayrecord(testrecord, readdir(testrecord))
