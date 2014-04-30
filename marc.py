@@ -36,3 +36,8 @@ def parsesf(field):
         else:
             current = current + 1
     return(subfields)
+
+tagdict = {
+'100': 'Personal Name',
+'100a': 'Name'
+}
