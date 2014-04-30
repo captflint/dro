@@ -38,20 +38,9 @@ def parsesf(field):
             current = current + 1
     return(subfields)
 
-# hassf() takes a field string and returns true if it contains subfields
-# and false if it does not
-def hassf(field):
-    current = 0
-    while field[current] != "":
-        if field[current] == "":
-            return(True)
-        else:
-            current = current + 1
-    return(False)
-
 for item in readmarc(testrecord):
     print(item[0])
-    if hassf(item[1]) is True:
+    if "" in item[1]:
         for sub in parsesf(item[1]):
             print(sub[0] + '\t' + sub[1])
         print("")
