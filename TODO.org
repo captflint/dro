@@ -1,7 +1,7 @@
 dro TODO list
 
-* TODO Implement support for MARC 21 bibliographic [0/5]
-** TODO write function to resolve MARC tags and sub tags
+* TODO Implement support for MARC 21 bibliographic [1/5]
+** DONE write function to resolve MARC tags and sub tags
 ** TODO write function to read MARC files from disk
 ** TODO write function to write MARC files to disk
 ** TODO write function to convert marc8 to utf8
