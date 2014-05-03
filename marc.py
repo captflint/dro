@@ -21,8 +21,10 @@ def readmarc(record):
 # the subfield data
 def parsesf(field):
     subfields = []
-    current = 2
+    current = 0
     subdata = ""
+    while field[current] != '':
+        current = current + 1
     while field[current] != "":
         if field[current] == "":
             subtag = field[current + 1]

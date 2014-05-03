@@ -26,6 +26,8 @@ def getsubtag(maintag, subtagrequest):
         current = tagindex[maintag]
         subtagreply = ""
         while tagdata[current:current + 5] != '$' + subtagrequest + ' - ':
+            if tagdata[current:current + 2] == '\n\n':
+                return('$' + subtagrequest)
             current = current + 1
         while tagdata[current] != '\n':
             subtagreply = subtagreply + tagdata[current]
