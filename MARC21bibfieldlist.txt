@@ -1,2217 +1,3 @@
---Leader and Directory--
-  LEADER
-     Character Positions
-     00-04 - Logical record length
-     05 - Record status
-         a - Increase in encoding level
-         c - Corrected or revised
-         d - Deleted
-         n - New
-         p - Increase in encoding level from prepublication
-     06 - Type of record
-         a - Language material
-         b - Archival and manuscripts control [OBSOLETE]
-         c - Notated music
-         d - Manuscript notated music
-         e - Cartographic material
-         f - Manuscript cartographic material
-         g - Projected medium
-         h - Microform publications [OBSOLETE]
-         i - Nonmusical sound recording
-         j - Musical sound recording
-         k - Two-dimensional nonprojectable graphic
-         m - Computer file
-         n - Special instructional material [OBSOLETE]
-         o - Kit
-         p - Mixed material
-         r - Three-dimensional artifact or naturally occurring object
-         t - Manuscript language material
-     07 - Bibliographic level
-         a - Monographic component part
-         b - Serial component part
-         c - Collection
-         d - Subunit
-         i - Integrating resource
-         m - Monograph/item
-         s - Serial
-     08 - Type of control
-         # - No specific type
-         a - Archival
-     09 - Character coding scheme
-         # - MARC-8
-         a - UCS/Unicode
-     10 - Indicator count
-     11 - Subfield code count
-     12-16 - Base address of data
-     17 - Encoding level
-         # - Full level
-         1 - Full level, material not examined
-         2 - Less-than-full level, material not examined
-         3 - Abbreviated level
-         4 - Core level
-         5 - Partial (preliminary) level
-         7 - Minimal level
-         8 - Prepublication level
-         u - Unknown
-         z - Not applicable
-     18 - Descriptive cataloging form
-         # - Non-ISBD
-         a - AACR 2
-         c - ISBD punctuation omitted
-         i - ISBD punctuation included
-         p - Partial ISBD (BK) [OBSOLETE]
-         r - Provisional (VM MP MU) [OBSOLETE]
-         u - Unknown
-     19 - Multipart resource record level
-         # - Not specified or not applicable
-         a - Set
-         b - Part with independent title
-         c - Part with dependent title 
-     20-23 - Entry map
-     20 - Length of the length-of-field portion
-     21 - Length of the starting-character-position portion
-     22 - Length of the implementation-defined portion
-     23 - Undefined Entry map character position
-
-   DIRECTORY
-   Character Positions
-      00-02 - Tag
-      03-06 - Field length
-      07-11 - Starting character position
-
-
---Control Fields (001-006)--
-001 - CONTROL NUMBER (NR)
-
-003 - CONTROL NUMBER IDENTIFIER (NR)
-
-005 - DATE AND TIME OF LATEST TRANSACTION (NR)
-
-006 - FIXED-LENGTH DATA ELEMENTS--ADDITIONAL MATERIAL CHARACTERISTICS--GENERAL INFORMATION (R)
-  006--BOOKS
-    Character Positions
-     00 - Form of material
-        a - Language material
-        t - Manuscript language material
-     01-04 - Illustrations
-     05 - Target audience
-     06 - Form of item
-     07-10 - Nature of contents
-     11 - Government publication
-     12 - Conference publication
-     13 - Festschrift
-     14 - Index
-     15 - Undefined
-     16 - Literary form
-     17 - Biography
-  006--COMPUTER FILES/ELECTRONIC RESOURCES
-    Character Positions
-     00 - Form of material
-        m - Computer file/Electronic resource
-     01-04 - Undefined
-     05 - Target audience
-     06 - Form of item
-     07-08 - Undefined
-     09 - Type of computer file
-     10 - Undefined
-     11 - Government publication
-     12-17 - Undefined
-  006--MAPS
-    Character Positions
-     00 - Form of material
-        e - Cartographic material
-        f - Manuscript cartographic material
-     01-04 - Relief
-     05-06 - Projection
-     07 - Undefined
-     07 - Prime meridian [OBSOLETE]
-     08 - Type of cartographic material
-     09-10 - Undefined
-     11 - Government publication
-     12 - Form of item
-     12 - Undefined [OBSOLETE]
-     13 - Undefined
-     14 - Index
-     15 - Undefined
-     16-17 - Special format characteristics
-  006--MIXED MATERIALS
-    Character Positions
-     00 - Form of material
-        p - Mixed material
-     01-05 - Undefined
-     06 - Form of item
-     07-17 - Undefined
-  006--MUSIC
-    Character Positions
-     00 - Form of material
-        c - Notated music
-        d - Manuscript notated music
-        i - Nonmusical sound recording
-        j - Musical sound recording
-     01-02 - Form of composition
-     03 - Format of music
-     04 - Music parts
-     05 - Target audience
-     06 - Form of item
-     07-12 - Accompanying matter
-     13-14 - Literary text for sound recordings
-     15 - Undefined
-     16 - Transposition and arrangement
-     17 - Undefined
-  006--CONTINUING RESOURCES
-    Character Positions
-     00 - Form of material
-        s - Serial/Integrating resource
-     01 - Frequency
-     02 - Regularity
-     03 - ISSN Center [OBSOLETE]
-     04 - Type of continuing resource
-     05 - Form of original item
-     06 - Form of item
-     07 - Nature of entire work
-     08-10 - Nature of contents
-     11 - Government publication
-     12 - Conference publication
-     13-15 - Undefined
-     16 - Original alphabet or script of title
-     17 - Entry convention
-  006--VISUAL MATERIALS
-    Character Positions
-     00 - Form of material
-        g - Projected medium
-        k - Two-dimensional nonprojectable graphic
-        o - Kit
-        r - Three-dimensional artifact or naturally occurring object
-     01-03 - Running time
-     04 - Undefined
-     05 - Target audience
-     06-10 - Undefined
-     06-10 - Accompanying matter [OBSOLETE]
-     11 - Government publication
-     12 - Form of item
-     12 - Undefined [OBSOLETE]
-     13-15 - Undefined
-     16 - Type of visual material
-     17 - Technique
-	 
---Control Field 007--
-007 - PHYSICAL DESCRIPTION FIXED FIELD--GENERAL INFORMATION (R)
-  007--MAP
-    Character Positions
-      00 - Category of material
-         a - Map
-      01 - Specific material designation
-         d - Atlas
-         g - Diagram
-         j - Map
-         k - Profile
-         q - Model
-         r - Remote-sensing image
-         s - Section
-         u - Unspecified
-         y - View
-         z - Other
-         | - No attempt to code
-      02 - Undefined
-      03 - Color
-         a - One color
-         c - Multicolored
-         | - No attempt to code
-      04 - Physical medium
-         a - Paper
-         b - Wood
-         c - Stone
-         d - Metal
-         e - Synthetic
-         f - Skin
-         g - Textile
-         i - Plastic
-         j - Glass
-         l - Vinyl
-         n - Vellum
-         p - Plaster
-         q - Flexible base photographic, positive
-         r - Flexible base photographic, negative
-         s - Non-flexible base photographic, positive
-         t - Non-flexible base photographic, negative
-         u - Unknown
-         v - Leather
-         w - Parchment
-         y - Other photographic medium
-         z - Other
-         | - No attempt to code
-      05 - Type of reproduction
-         f - Facsimile
-         n - Not applicable
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      06 - Production/reproduction details
-         a - Photocopy, blueline print
-         b - Photocopy
-         c - Pre-production
-         d - Film
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      07 - Positive/negative aspect
-         a - Positive
-         b - Negative
-         m - Mixed polarity
-         n - Not applicable
-         | - No attempt to code
-   007--ELECTRONIC RESOURCE
-     Character Positions
-      00 - Category of material
-         c - Computer file
-      01 - Specific material designation
-         a - Tape cartridge
-         b - Chip cartridge
-         c - Computer optical disc cartridge
-         d - Computer disc, type unspecified
-         e - Computer disc cartridge, type unspecified
-         f - Tape cassette
-         h - Tape reel
-         j - Magnetic disk
-         k - Computer card
-         m - Magneto-optical disc
-         o - Optical disc
-         r - Remote
-         u - Unspecified
-         z - Other
-         | - No attempt to code
-      02 - Undefined
-      03 - Color
-         a - One color
-         b - Black-and-white
-         c - Multicolored
-         g - Gray scale
-         m - Mixed
-         n - Not applicable
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      04 - Dimensions
-         a - 3 1/2 in.
-         e - 12 in.
-         g - 4 3/4 in. or 12 cm.
-         i - 1 1/8 x 2 3/8 in.
-         j - 3 7/8 x 2 1/2 in.
-         n - Not applicable
-         o - 5 1/4 in.
-         u - Unknown
-         v - 8 in.
-         z - Other
-         | - No attempt to code
-      05 - Sound
-         # - No sound (silent)
-         a - Sound on medium
-         u - Unknown
-         | - No attempt to code
-      06-08 - Image bit depth
-         001-999 - Exact bit depth
-         mmm - Multiple
-         nnn - Not applicable
-         --- - Unknown
-         ||| - No attempt to code
-      09 - File formats
-         a - One
-         m - Multiple
-         u - Unknown
-         | - No attempt to code
-      10 - Quality assurance target(s)
-         a - Absent
-         n - Not applicable
-         p - Present
-         u - Unknown
-         | - No attempt to code
-      11 - Antecedent/source
-         a - File reproduced from original
-         b - File reproduced from microform
-         c - File reproduced from an electronic resource
-         d - File reproduced from an intermediate (not microform)
-         m - Mixed
-         n - Not applicable
-         u - Unknown
-         | - No attempt to code
-      12 - Level of compression
-         a - Uncompressed
-         b - Lossless
-         d - Lossy
-         m - Mixed
-         u - Unknown
-         | - No attempt to code
-      13 - Reformatting quality
-         a - Access
-         n - Not applicable
-         p - Preservation
-         r - Replacement
-         u - Unknown
-         | - No attempt to code
-   007--GLOBE
-     Character Positions
-      00 - Category of material
-         d - Globe
-      01 - Specific material designation
-         a - Celestial globe
-         b - Planetary or lunar globe
-         c - Terrestrial globe
-         e - Earth moon globe
-         u - Unspecified
-         z - Other
-         | - No attempt to code
-      02 - Undefined
-      03 - Color
-         a - One color
-         c - Multicolored
-         | - No attempt to code
-      04 - Physical medium
-         a - Paper
-         b - Wood
-         c - Stone
-         d - Metal
-         e - Synthetic
-         f - Skin
-         g - Textile
-         i - Plastic
-         l - Vinyl
-         n - Vellum
-         p - Plaster
-         u - Unknown
-         v - Leather
-         w - Parchment
-         z - Other
-         | - No attempt to code
-      05 - Type of reproduction
-         f - Facsimile
-         n - Not applicable
-         u - Unknown
-         z - Other
-         | - No attempt to code
-   007--TACTILE MATERIAL
-     Character Positions
-      00 - Category of material
-         f - Tactile material
-      01 - Specific material designation
-         a - Moon
-         b - Braille
-         c - Combination
-         d - Tactile, with no writing system
-         u - Unspecified
-         z - Other
-         | - No attempt to code
-      02 - Undefined
-      03-04 - Class of braille writing
-         # - No specified class of braille writing
-         a - Literary braille
-         b - Format code braille
-         c - Mathematics and scientific braille
-         d - Computer braille
-         e - Music braille
-         m - Multiple braille types
-         n - Not applicable
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      05 - Level of contraction
-         a - Uncontracted
-         b - Contracted
-         m - Combination
-         n - Not applicable
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      06-08 - Braille music format
-         # - No specified braille music format
-         a - Bar over bar
-         b - Bar by bar
-         c - Line over line
-         d - Paragraph
-         e - Single line
-         f - Section by section
-         g - Line by line
-         h - Open score
-         i - Spanner short form scoring
-         j - Short form scoring
-         k - Outline
-         l - Vertical score
-         n - Not applicable
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      09 - Specific physical characteristics
-         a - Print/braille
-         b - Jumbo or enlarged braille
-         n - Not applicable
-         u - Unknown
-         z - Other
-         | - No attempt to code
-   007--PROJECTED GRAPHIC
-     Character Positions
-      00 - Category of material
-         g - Projected graphic
-      01 - Specific material designation
-         c - Filmstrip cartridge
-         d - Filmslip
-         f - Filmstrip, type unspecified
-         o - Filmstrip roll
-         s - Slide
-         t - Transparency
-         u - Unspecified
-         z - Other
-         | - No attempt to code
-      02 - Undefined
-      03 - Color
-         a - One color
-         b - Black-and-white
-         c - Multicolored
-         h - Hand colored
-         m - Mixed
-         n - Not applicable
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      04 - Base of emulsion
-         d - Glass
-         e - Synthetic
-         j - Safety film
-         k - Film base, other than safety film
-         m - Mixed collection
-         o - Paper
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      05 - Sound on medium or separate
-         # - No sound (silent)
-         a - Sound on medium
-         b - Sound separate from medium
-         u - Unknown
-         | - No attempt to code
-      06 - Medium for sound
-         # - No sound (silent)
-         a - Optical sound track on motion picture film
-         b - Magnetic sound track on motion picture film
-         c - Magnetic audio tape in cartridge
-         d - Sound disc
-         e - Magnetic audio tape on reel
-         f - Magnetic audio tape in cassette
-         g - Optical and magnetic sound track on motion picture film
-         h - Videotape
-         i - Videodisc
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      07 - Dimensions
-         a - Standard 8 mm.
-         b - Super 8 mm./single 8 mm.
-         c - 9.5 mm.
-         d - 16 mm.
-         e - 28 mm.
-         f - 35 mm.
-         g - 70 mm.
-         j - 2x2 in. or 5x5 cm.
-         k - 2 1/4 x 2 1/4 in. or 6x6 cm.
-         s - 4x5 in. or 10x13 cm.
-         t - 5x7 in. or 13x18 cm.
-         u - Unknown
-         v - 8x10 in. or 21x26 cm.
-         w - 9x9 in. or 23x23 cm.
-         x - 10x10 in. or 26x26 cm.
-         y - 7x7 in. or 18x18 cm.
-         z - Other
-         | - No attempt to code
-      08 - Secondary support material
-         # - No secondary support
-         c - Cardboard
-         d - Glass
-         e - Synthetic
-         h - Metal
-         j - Metal and glass
-         k - Synthetic and glass
-         m - Mixed collection
-         u - Unknown
-         z - Other
-         | - No attempt to code
-   007--MICROFORM
-     Character Positions
-      00 - Category of material
-         h - Microform
-      01 - Specific material designation
-         a - Aperture card
-         b - Microfilm cartridge
-         c - Microfilm cassette
-         d - Microfilm reel
-         e - Microfiche
-         f - Microfiche cassette
-         g - Microopaque
-         h - Microfilm slip
-         j - Mircrofilm roll
-         u - Unspecified
-         z - Other
-         | - No attempt to code
-      02 - Undefined
-      03 - Positive/negative aspect
-         a - Positive
-         b - Negative
-         m - Mixed polarity
-         u - Unknown
-         | - No attempt to code
-      04 - Dimensions
-         a - 8 mm.
-         d - 16 mm.
-         f - 35 mm.
-         g - 70 mm.
-         h - 105 mm.
-         l - 3x5 in. or 8x13 cm.
-         m - 4x6 in. or 11x15 cm.
-         o - 6x9 in. or 16x23 cm.
-         p - 3 1/4 x 7 3/8 in. or 9x19 cm.
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      05 - Reduction ratio range
-         a - Low reduction
-         b - Normal reduction
-         c - High reduction
-         d - Very high reduction
-         e - Ultra high reduction
-         u - Unknown
-         v - Reduction rate varies
-         | - No attempt to code
-      06-08 - Reduction ratio
-      09 - Color
-         b - Black-and-white (or monochrome)
-         c - Multicolored
-         m - Mixed
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      10 - Emulsion on film
-         a - Silver halide
-         b - Diazo
-         c - Vesicular
-         m - Mixed emulsion
-         n - Not applicable
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      11 - Generation
-         a - First generation (master)
-         b - Printing master
-         c - Service copy
-         m - Mixed generation
-         u - Unknown
-         | - No attempt to code
-      12 - Base of film
-         a - Safety base, undetermined
-         c - Safety base, acetate undetermined
-         d - Safety base, diacetate
-         p - Safety base, polyester
-         r - Safety base, mixed
-         t - Safety base, triacetate
-         i - Nitrate base
-         m - Mixed base (nitrate and safety)
-         n - Not applicable
-         u - Unknown
-         z - Other
-         | - No attempt to code
-   007--NONPROJECTED GRAPHIC
-     Character Positions
-      00 - Category of material
-         k - Nonprojected graphic
-      01 - Specific material designation
-         a - Activity card
-         c - Collage
-         d - Drawing
-         e - Painting
-         f - Photomechanical print
-         g - Photonegative
-         h - Photoprint
-         i - Picture
-         j - Print
-         k - Poster
-         l - Technical drawing
-         n - Chart
-         o - Flash card
-         p - Postcard
-         q - Icon
-         r - Radiograph
-         s - Study print
-         u - Unspecified
-         v - Photograph, type unspecified
-         z - Other
-         | - No attempt to code
-      02 - Undefined
-      03 - Color
-         a - One color
-         b - Black-and-white
-         c - Multicolored
-         h - Hand colored
-         m - Mixed
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      04 - Primary support material
-         a - Canvas
-         b - Bristol board
-         c - Cardboard/illustration board
-         d - Glass
-         e - Synthetic
-         f - Skin
-         g - Textile
-         h - Metal
-         i - Plastic
-         l - Vinyl
-         m - Mixed collection
-         n - Vellum
-         o - Paper
-         p - Plaster
-         q - Hardboard
-         r - Porcelain
-         s - Stone
-         t - Wood
-         u - Unknown
-         v - Leather
-         w - Parchment
-         z - Other
-         | - No attempt to code
-      05 - Secondary support material
-         # - No secondary support
-         a - Canvas
-         b - Bristol board
-         c - Cardboard/illustration board
-         d - Glass
-         e - Synthetic
-         f - Skin
-         g - Textile
-         h - Metal
-         i - Plastic
-         l - Vinyl
-         m - Mixed collection
-         n - Vellum
-         o - Paper
-         p - Plaster
-         q - Hardboard
-         r - Porcelain
-         s - Stone
-         t - Wood
-         u - Unknown
-         v - Leather
-         w - Parchment
-         z - Other
-         | - No attempt to code
-   007--MOTION PICTURE
-     Character Positions
-      00 - Category of material
-         m - Motion picture
-      01 - Specific material designation
-         c - Film cartridge
-         f - Film cassette
-         o - Film roll
-         r - Film reel
-         u - Unspecified
-         z - Other
-         | - No attempt to code
-      02 - Undefined
-      03 - Color
-         b - Black-and-white
-         c - Multicolored
-         h - Hand colored
-         m - Mixed
-         n - Not applicable
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      04 - Motion picture presentation format
-         a - Standard sound aperture (reduced frame)
-         b - Nonanamorphic (wide-screen)
-         c - 3D
-         d - Anamorphic (wide-screen)
-         e - Other wide-screen format
-         f - Standard silent aperture (full frame)
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      05 - Sound on medium or separate
-         # - No sound (silent)
-         a - Sound on medium
-         b - Sound separate from medium
-         u - Unknown
-         | - No attempt to code
-      06 - Medium for sound
-         # - No sound (silent)
-         a - Optical sound track on motion picture film
-         b - Magnetic sound track on motion picture film
-         c - Magnetic audio tape in cartridge
-         d - Sound disc
-         e - Magnetic audio tape on reel
-         f - Magnetic audio tape in cassette
-         g - Optical and magnetic sound track on motion picture film
-         h - Videotape
-         i - Videodisc
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      07 - Dimensions
-         a - Standard 8 mm.
-         b - Super 8 mm./single 8 mm.
-         c - 9.5 mm.
-         d - 16 mm.
-         e - 28 mm.
-         f - 35 mm.
-         g - 70 mm.
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      08 - Configuration of playback channels
-         k - Mixed
-         m - Monaural
-         n - Not applicable
-         q - Quadraphonic, multichannel, or surround
-         s - Stereophonic
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      09 - Production elements
-         a - Workprint
-         b - Trims
-         c - Outtakes
-         d - Rushes
-         e - Mixing tracks
-         f - Title bands/intertitle rolls
-         g - Production rolls
-         n - Not applicable
-         z - Other
-         | - No attempt to code
-      10 - Positive/negative aspect
-         a - Positive
-         b - Negative
-         n - Not applicable
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      11 - Generation
-         d - Duplicate
-         e - Master
-         o - Original
-         r - Reference print/viewing copy
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      12 - Base of film
-         a - Safety base, undetermined
-         c - Safety base, acetate undetermined
-         d - Safety base, diacetate
-         p - Safety base, polyester
-         r - Safety base, mixed
-         t - Safety base, triacetate
-         i - Nitrate base
-         m - Mixed base (nitrate and safety)
-         n - Not applicable
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      13 - Refined categories of color
-         a - 3 layer color
-         b - 2 color, single strip
-         c - Undetermined 2 color
-         d - Undetermined 3 color
-         e - 3 strip color
-         f - 2 strip color
-         g - Red strip
-         h - Blue or green strip
-         i - Cyan strip
-         j - Magenta strip
-         k - Yellow strip
-         l - S E N 2
-         m - S E N 3
-         n - Not applicable
-         p - Sepia tone
-         q - Other tone
-         r - Tint
-         s - Tinted and toned
-         t - Stencil color
-         u - Unknown
-         v - Hand colored
-         z - Other
-         | - No attempt to code
-      14 - Kind of color stock or print
-         a - Imbibition dye transfer prints
-         b - Three layer stock
-         c - Three layer stock, low fade
-         d - Duplitized stock
-         n - Not applicable
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      15 - Deterioration stage
-         a - None apparent
-         b - Nitrate: suspicious odor
-         c - Nitrate: pungent odor
-         d - Nitrate: brownish, discoloration, fading, dusty
-         e - Nitrate: sticky
-         f - Nitrate: frothy, bubbles, blisters
-         g - Nitrate: congealed
-         h - Nitrate: powder
-         k - Non-nitrate: detectable deterioration (diacetate odor)
-         l - Non-nitrate: advanced deterioration
-         m - Non-nitrate: disaster
-         | - No attempt to code
-      16 - Completeness
-         c - Complete
-         i - Incomplete
-         n - Not applicable
-         u - Unknown
-         | - No attempt to code
-      17-22 - Film inspection date
-   007--KIT
-     Character Positions
-      00 - Category of material
-         o - Kit
-      01 - Specific material designation
-         u - Unspecified
-         | - No attempt to code
-   007--NOTATED MUSIC
-     Character Positions
-      00 - Category of material
-         q - Notated music
-      01 - Specific material designation
-         u - Unspecified
-         | - No attempt to code
-   007--REMOTE-SENSING IMAGE
-     Character Positions
-      00 - Category of material
-         r - Remote-sensing image
-      01 - Specific material designation
-         u - Unspecified
-         | - No attempt to code
-      02 - Undefined
-      03 - Altitude of sensor
-         a - Surface
-         b - Airborne
-         c - Spaceborne
-         n - Not applicable
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      04 - Attitude of sensor
-         a - Low oblique
-         b - High oblique
-         c - Vertical
-         n - Not applicable
-         u - Unknown
-         | - No attempt to code
-      05 - Cloud cover
-         0 - 0-9%
-         1 - 10-19%
-         2 - 20-29%
-         3 - 30-39%
-         4 - 40-49%
-         5 - 50-59%
-         6 - 60-69%
-         7 - 70-79%
-         8 - 80-89%
-         9 - 90-100%
-         n - Not applicable
-         u - Unknown
-         | - No attempt to code
-      06 - Platform construction type
-         a - Balloon
-         b - Aircraft--low altitude
-         c - Aircraft--medium altitude
-         d - Aircraft--high altitude
-         e - Manned spacecraft
-         f - Unmanned spacecraft
-         g - Land-based remote-sensing device
-         h - Water surface-based remote-sensing device
-         i - Submersible remote-sensing device
-         n - Not applicable
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      07 - Platform use category
-         a - Meteorological
-         b - Surface observing
-         c - Space observing
-         m - Mixed uses
-         n - Not applicable
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      08 - Sensor type
-         a - Active
-         b - Passive
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      09-10 - Data type
-         aa - Visible light
-         da - Near infrared
-         db - Middle infrared
-         dc - Far infrared
-         dd - Thermal infrared
-         de - Shortwave infrared (SWIR)
-         df - Reflective infrared
-         dv - Combinations
-         dz - Other infrared data
-         ga - Sidelooking airborne radar (SLAR)
-         gb - Synthetic aperture radar (SAR)-Single frequency
-         gc - SAR-multi-frequency (multichannel)
-         gd - SAR-like polarization
-         ge - SAR-cross polarization
-         gf - Infometric SAR
-         gg - polarmetric SAR
-         gu - Passive microwave mapping
-         gz - Other microwave data
-         ja - Far ultraviolet
-         jb - Middle ultraviolet
-         jc - Near ultraviolet
-         jv - Ultraviolet combinations
-         jz - Other ultraviolet data
-         ma - Multi-spectral, multidata
-         mb - Multi-temporal
-         mm - Combination of various data types
-         nn - Not applicable
-         pa - Sonar--water depth
-         pb - Sonar--bottom topography images, sidescan
-         pc - Sonar--bottom topography, near surface
-         pd - Sonar--bottom topography, near bottom
-         pe - Seismic surveys
-         pz - Other acoustical data
-         ra - Gravity anomalies (general)
-         rb - Free-air
-         rc - Bouger
-         rd - Isostatic
-         sa - Magnetic field
-         ta - radiometric surveys
-         uu - Unknown
-         zz - Other
-         || - No attempt to code
-   007--SOUND RECORDING
-     Character Positions
-      00 - Category of material
-         s - Sound recording
-      01 - Specific material designation
-         d - Sound disc
-         e - Cylinder
-         g - Sound cartridge
-         i - Sound-track film
-         q - Roll
-         s - Sound cassette
-         t - Sound-tape reel
-         u - Unspecified
-         w - Wire recording
-         z - Other
-         | - No attempt to code
-      02 - Undefined
-      03 - Speed
-         a - 16 rpm
-         b - 33 1/3 rpm
-         c - 45 rpm
-         d - 78 rpm
-         e - 8 rpm
-         f - 1.4 m. per sec.
-         h - 120 rpm
-         i - 160 rpm
-         k - 15/16 ips
-         l - 1 7/8 ips
-         m - 3 3/4 ips
-         o - 7 1/2 ips
-         p - 15 ips
-         r - 30 ips
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      04 - Configuration of playback channels
-         m - Monaural
-         q - Quadraphonic, multichannel, or surround
-         s - Stereophonic
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      05 - Groove width/groove pitch
-         m - Microgroove/fine
-         n - Not applicable
-         s - Coarse/standard
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      06 - Dimensions
-         a - 3 in.
-         b - 5 in.
-         c - 7 in.
-         d - 10 in.
-         e - 12 in.
-         f - 16 in.
-         g - 4 3/4 in. or 12 cm.
-         j - 3 7/8 x 2 1/2 in.
-         o - 5 1/4 x 3 7/8 in.
-         n - Not applicable
-         s - 2 3/4 x 4 in.
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      07 - Tape width
-         l - 1/8 in.
-         m - 1/4 in.
-         n - Not applicable
-         o - 1/2 in.
-         p - 1 in.
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      08 - Tape configuration
-         a - Full (1) track
-         b - Half (2) track
-         c - Quarter (4) track
-         d - Eight track
-         e - Twelve track
-         f - Sixteen track
-         n - Not applicable
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      09 - Kind of disc, cylinder or tape
-         a - Master tape
-         b - Tape duplication master
-         d - Disc master (negative)
-         i - Instantaneous (recorded on the spot)
-         m - Mass produced
-         n - Not applicable
-         r - Mother (positive)
-         s - Stamper (negative)
-         t - Test pressing
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      10 - Kind of material
-         a - Lacquer coating
-         b - Cellulose nitrate
-         c - Acetate tape with ferrous oxide
-         g - Glass with lacquer
-         i - Aluminum with lacquer
-         r - Paper with lacquer or ferrous oxide
-         l - Metal
-         m - Plastic with metal
-         n - Not applicable [OBSOLETE]
-         p - Plastic
-         s - Shellac
-         u - Unknown
-         w - Wax
-         z - Other
-         | - No attempt to code
-      11 - Kind of cutting
-         h - Hill-and-dale cutting
-         l - Lateral or combined cutting
-         n - Not applicable
-         u - Unknown
-         | - No attempt to code
-      12 - Special playback characteristics
-         a - NAB standard
-         b - CCIR standard
-         c - Dolby-B encoded
-         d - dbx encoded
-         e - Digital recording
-         f - Dolby-A encoded
-         g - Dolby-C encoded
-         h - CX encoded
-         n - Not applicable
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      13 - Capture and storage technique
-         a - Acoustical capture, direct storage
-         b - Direct storage, not acoustical
-         d - Digital storage
-         e - Analog electrical storage
-         u - Unknown
-         z - Other
-         | - No attempt to code
-   007--TEXT
-     Character Positions
-      00 - Category of material
-         t - Text
-      01 - Specific material designation
-         a - Regular print
-         b - Large print
-         c - Braille
-         d - Text in looseleaf binder
-         u - Unspecified
-         z - Other
-         | - No attempt to code
-   007--VIDEORECORDING
-     Character Positions
-      00 - Category of material
-         v - Videorecording
-      01 - Specific material designation
-         c - Videocartridge
-         d - Videodisc
-         f - Videocassette
-         r - Videoreel
-         u - Unspecified
-         z - Other
-         | - No attempt to code
-      02 - Undefined
-      03 - Color
-         a - One color
-         b - Black-and-white
-         c - Multicolored
-         m - Mixed
-         n - Not applicable
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      04 - Videorecording format
-         a - Beta (1/2 in., videocassette)
-         b - VHS (1/2 in., videocassette)
-         c - U-matic (3/4 in., videocassette)
-         d - EIAJ (1/2 in. reel)
-         e - Type C (1 in., reel)
-         f - Quadruplex (1 in. or 2 in., reel)
-         g - Laserdisc
-         h - CED (Capacitance Electronic Disc) videodisc
-         i - Betacam (1/2 in., videocassette)
-         j - Betacam SP (1/2 in., videocassette)
-         k - Super-VHS (1/2 in., videocassette)
-         m - M-II (1/2 in., videocassette)
-         o - D-2 (3/4 in., videocassette)
-         p - 8 mm.
-         q - Hi-8 mm.
-         s - Blu-ray disc
-         u - Unknown
-         v - DVD
-         z - Other
-         | - No attempt to code
-      05 - Sound on medium or separate
-         # - No sound (silent)
-         a - Sound on medium
-         b - Sound separate from medium
-         u - Unknown
-         |- No attempt to code
-      06 - Medium for sound
-         # - No sound (silent)
-         a - Optical sound track on motion picture film
-         b - Magnetic sound track on motion picture film
-         c - Magnetic audio tape in cartridge
-         d - Sound disc
-         e - Magnetic audio tape on reel
-         f - Magnetic audio tape in cassette
-         g - Optical and magnetic sound track on motion picture film
-         h - Videotape
-         i - Videodisc
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      07 - Dimensions
-         a - 8 mm.
-         m - 1/4 in.
-         o - 1/2 in.
-         p - 1 in.
-         q - 2 in.
-         r - 3/4 in.
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      08 - Configuration of playback channels
-         k - Mixed
-         m - Monaural
-         n - Not applicable
-         q - Quadraphonic, multichannel, or surround
-         s - Stereophonic
-         u - Unknown
-         z - Other
-         | - No attempt to code
-   007--UNSPECIFIED
-     Character Positions
-      00 - Category of material
-         z - Unspecified
-      01 - Specific material designation
-         m - Multiple physical forms
-         u - Unspecified
-         z - Other
-         | - No attempt to code
-
---Control Field 008--
-008 - FIXED-LENGTH DATA ELEMENTS--GENERAL INFORMATION (NR)
-  008--ALL MATERIALS
-    Character Positions
-      00-05 - Date entered on file
-      06 - Type of date/Publication status
-         b - No dates given; B.C. date involved
-         c - Continuing resource currently published
-         c - Actual date and copyright date [OBSOLETE]
-         d - Continuing resource ceased publication
-         d - Detailed date [OBSOLETE]
-         e - Detailed date
-         i - Inclusive dates of collection
-         k - Range of years of bulk of collection
-         m - Multiple dates
-         n - Dates unknown
-         p - Date of distribution/release/issue and production/recording session when different
-         q - Questionable date
-         r - Reprint/reissue date and original date
-         s - Single known date/probable date
-         t - Publication date and copyright date
-         u - Continuing resource status unknown
-         | - No attempt to code
-      07-10 - Date 1
-         1-9 - Date digit
-         # - Date element is not applicable
-         u - Date element is totally or partially unknown
-         | - No attempt to code
-      11-14 - Date 2
-         1-9 - Date digit
-         # - Date element is not applicable
-         u - Date element is totally or partially unknown
-         | - No attempt to code
-      15-17 - Place of publication, production, or execution
-      35-37 - Language
-      38 - Modified record
-         # - Not modified
-         d - Dashed-on information omitted
-         o - Completely romanized/printed cards romanized
-         r - Completely romanized/printed cards in script
-         s - Shortened
-         x - Missing characters
-         | - No attempt to code
-      39 - Cataloging source
-         # - National bibliographic agency
-         a - National Agricultural Library [OBSOLETE]
-         b - National Library of Medicine [OBSOLETE]
-         c - Cooperative cataloging program
-         d - Other
-         n - Report to [OBSOLETE]
-         u - Unknown
-         | - No attempt to code
-   008--BOOKS
-     Character Positions
-      18-21 - Illustrations
-         # - No illustrations
-         a - Illustrations
-         b - Maps
-         c - Portraits
-         d - Charts
-         e - Plans
-         f - Plates
-         g - Music
-         h - Facsimiles
-         i - Coats of arms
-         j - Genealogical tables
-         k - Forms
-         l - Samples
-         m - Phonodisc, phonowire, etc.
-         o - Photographs
-         p - Illuminations
-         | - No attempt to code
-      22 - Target audience
-         # - Unknown or not specified
-         a - Preschool
-         b - Primary
-         c - Pre-adolescent
-         d - Adolescent
-         e - Adult
-         f - Specialized
-         g - General
-         j - Juvenile
-         | - No attempt to code
-      23 - Form of item
-         # - None of the following
-         a - Microfilm
-         b - Microfiche
-         c - Microopaque
-         d - Large print
-         f - Braille
-         g - Punched paper tape [OBSOLETE]
-         h - Magnetic tape [OBSOLETE]
-         i - Multimedia [OBSOLETE]
-         o - Online
-         q - Direct electronic
-         r - Regular print reproduction
-         s - Electronic
-         z - Other form of reproduction [OBSOLETE]
-         | - No attempt to code
-      24-27 - Nature of contents
-         # - No specified nature of contents
-         a - Abstracts/summaries
-         b - Bibliographies
-         c - Catalogs
-         d - Dictionaries
-         e - Encyclopedias
-         f - Handbooks
-         g - Legal articles
-         h - Handbooks [OBSOLETE]
-         i - Indexes
-         j - Patent document
-         k - Discographies
-         l - Legislation
-         m - Theses
-         n - Surveys of literature in a subject area
-         o - Reviews
-         p - Programmed texts
-         q - Filmographies
-         r - Directories
-         s - Statistics
-         t - Technical reports
-         u - Standards/specifications
-         v - Legal cases and case notes
-         w - Law reports and digests
-         x - Technical reports [OBSOLETE]
-         y - Yearbooks
-         z - Treaties
-         2 - Offprints
-         5 - Calendars
-         6 - Comics/graphic novels
-         | - No attempt to code
-      28 - Government publication
-         # - Not a government publication
-         a - Autonomous or semi-autonomous component
-         c - Multilocal
-         f - Federal/national
-         i - International intergovernmental
-         l - Local
-         m - Multistate
-         n - Government publication--level undetermined [OBSOLETE]
-         o - Government publication--level undetermined
-         s - State, provincial, territorial, dependent, etc.
-         u - Unknown if item is government publication
-         z - Other
-         | - No attempt to code
-      29 - Conference publication
-         0 - Not a conference publication
-         1 - Conference publication
-         | - No attempt to code
-      30 - Festschrift
-         0 - Not a festschrift
-         1 - Festschrift
-         | - No attempt to code
-      31 - Index
-         0 - No index
-         1 - Index present
-         | - No attempt to code
-      32 - Undefined
-      32 - Main entry in body of entry [OBSOLETE]
-         0 - Main entry not in body of entry
-         1 - Main entry in body of entry
-         | - No attempt to code
-      33 - Literary form
-         0 - Not fiction (not further specified)
-         1 - Fiction (not further specified)
-         c - Comic strips [OBSOLETE]
-         d - Dramas
-         e - Essays
-         f - Novels
-         h - Humor, satires, etc.
-         i - Letters
-         j - Short stories
-         m - Mixed forms
-         p - Poetry
-         s - Speeches
-         u - Unknown
-         | - No attempt to code
-      34 - Biography
-         # - No biographical material
-         a - Autobiography
-         b - Individual biography
-         c - Collective biography
-         d - Contains biographical information
-         | - No attempt to code
-  008--COMPUTER FILES
-    Character Positions
-      18-21 - Undefined
-      18 - Frequency [OBSOLETE]
-         # - No determinable frequency
-         a - Annual
-         b - Bimonthly
-         c - Semiweekly
-         d - Daily
-         e - Biweekly
-         f - Semiannual
-         g - Biennial
-         h - Triennial
-         i - Three times a week
-         j - Three times a month
-         m - Monthly
-         n - Not applicable
-         q - Quarterly
-         s - Semimonthly
-         t - Three times a year
-         u - Unknown
-         w - Weekly
-         z - Other frequencies
-      19 - Regularity [OBSOLETE]
-         # - Not applicable
-         n - Normalized irregular
-         r - Regular
-         u - Unknown
-         x - Completely irregular
-      22 - Target audience
-         # - Unknown or not specified
-         a - Preschool
-         b - Primary
-         c - Pre-adolescent
-         d - Adolescent
-         e - Adult
-         f - Specialized
-         g - General
-         j - Juvenile
-         | - No attempt to code
-      23 - Form of item
-         o - Online
-         q - Direct electronic
-      24-25 - Undefined
-      26 - Type of computer file
-         a - Numeric data
-         b - Computer program
-         c - Representational
-         d - Document
-         e - Bibliographic data
-         f - Font
-         g - Game
-         h - Sound
-         i - Interactive multimedia
-         j - Online system or service
-         m - Combination
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      27 - Undefined
-      27 - Type of machine [OBSOLETE]
-         a - Computer readable
-         z - Other
-      28 - Government publication
-         # - Not a government publication
-         a - Autonomous or semi-autonomous component
-         c - Multilocal
-         f - Federal/national
-         i - International intergovernmental
-         l - Local
-         m - Multistate
-         o - Government publication--level undetermined
-         s - State, provincial, territorial, dependent, etc.
-         u - Unknown if item is government publication
-         z - Other
-         | - No attempt to code
-      29-34 - Undefined
-  008--MAPS
-    Character Positions
-      18-21 - Relief
-         # - No relief shown
-         a - Contours
-         b - Shading
-         c - Gradient and bathymetric tints
-         d - Hachures
-         e - Bathymetry/soundings
-         f - Form lines
-         g - Spot heights
-         h - Color [OBSOLETE]
-         i - Pictorially
-         j - Land forms
-         k - Bathymetry/isolines
-         m - Rock drawings
-         z - Other relief type
-         | - No attempt to code
-      22-23 - Projection
-         ## - Projection not specified
-         aa - Aitoff
-         ab - Gnomic
-         ac - Lambert's azimuthal equal area
-         ad - Orthographic
-         ae - Azimuthal equidistant
-         af - Stereographic
-         ag - General vertical near-sided
-         am - Modified stereographic for Alaska
-         an - Chamberlin trimetric
-         ap - Polar stereographic
-         au - Azimuthal, specific type unknown
-         az - Azimuthal, other
-         ba - Gall
-         bb - Goode's homolographic
-         bc - Lambert's cylindrical equal area
-         bd - Mercator
-         be - Miller
-         bf - Mollweide
-         bg - Sinusoidal
-         bh - Transverse Mercator
-         bi - Gauss-Kruger
-         bj - Equirectangular
-         bk - Krovak
-         bl - Cassini-Soldner
-         bo - Oblique Mercator
-         br - Robinson
-         bs - Space oblique Mercator
-         bu - Cylindrical, specific type unknown
-         bz - Cylindrical, other
-         ca - Alber's equal area
-         cb - Bonne
-         cc - Lambert's conformal conic
-         ce - Equidistant conic
-         cp - Polyconic
-         cu - Conic, specific type unknown
-         cz - Conic, other
-         da - Armadillo
-         db - Butterfly
-         dc - Eckert
-         dd - Goode's homolosine
-         de - Miller's bipolar oblique conformal conic
-         df - Van Der Grinten
-         dg - Dimaxion
-         dh - Cordiform
-         dl - Lambert conformal
-         zz - Other
-          | - No attempt to code
-      24 - Undefined
-      24 - Prime meridian [OBSOLETE]
-         # - Prime meridian not specified
-         e - Greenwich
-         f - Ferro
-         g - Paris
-         h - Other [OBSOLETE]
-         p - Philadelphia
-         w - Washington, D.C.
-         z - Other
-      25 - Type of cartographic material
-         a - Single map
-         b - Map series
-         c - Map serial
-         d - Globe
-         e - Atlas
-         f - Separate map supplement to another work
-         g - Map bound as part of another work
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      26-27 - Undefined
-      26-27 - Publisher code [OBSOLETE]
-      28 - Government publication
-         # - Not a government publication
-         a - Autonomous or semi-autonomous component
-         c - Multilocal
-         f - Federal/national
-         i - International intergovernmental
-         l - Local
-         m - Multistate
-         o - Government publication--level undetermined
-         s - State, provincial, territorial, dependent, etc.
-         u - Unknown if item is government publication
-         z - Other
-         | - No attempt to code
-      29 - Form of item
-         # - None of the following
-         a - Microfilm
-         b - Microfiche
-         c - Microopaque
-         d - Large print
-         f - Braille
-         o - Online
-         q - Direct electronic
-         r - Regular print reproduction
-         s - Electronic
-         | - No attempt to code
-      30 - Undefined
-      31 - Index
-         0 - No index
-         1 - Index present
-         | - No attempt to code
-      32 - Undefined
-      32 - Citation indicator [OBSOLETE]
-      33-34 - Special format characteristics
-         # - No specified special format characteristics
-         a - Photocopy, blue line print [OBSOLETE]
-         b - Photocopy [OBSOLETE]
-         c - Negative photocopy [OBSOLETE]
-         d - Film negative [OBSOLETE]
-         e - Manuscript
-         f - Facsimile [OBSOLETE]
-         g - Relief model [OBSOLETE]
-         h - Rare [OBSOLETE]
-         j - Picture card, post card
-         k - Calendar
-         l - Puzzle
-         m - Braille [OBSOLETE]
-         n - Game
-         o - Wall map
-         p - Playing cards
-         q - Large print [OBSOLETE]
-         r - Loose-leaf
-         z - Other
-         | - No attempt to code
-  008--MUSIC
-    Character Positions
-      18-19 - Form of composition
-         an - Anthems
-         bd - Ballads
-         bg - Bluegrass music
-         bl - Blues
-         bt - Ballets
-         ca - Chaconnes
-         cb - Chants, Other religions
-         cc - Chant, Christian
-         cg - Concerti grossi
-         ch - Chorales
-         cl - Chorale preludes
-         cn - Canons and rounds
-         co - Concertos
-         cp - Chansons, polyphonic
-         cr - Carols
-         cs - Chance compositions
-         ct - Cantatas
-         cy - Country music
-         cz - Canzonas
-         df - Dance forms
-         dv - Divertimentos, serenades, cassations, divertissements, notturni
-         fg - Fugues
-         fl - Flamenco
-         fm - Folk music
-         ft - Fantasias
-         gm - Gospel music
-         hy - Hymns
-         jz - Jazz
-         mc - Musical revues and comedies
-         md - Madrigals
-         mi - Minuets
-         mo - Motets
-         mp - Motion picture music
-         mr - Marches
-         ms - Masses
-         mu - Multiple forms
-         mz - Mazurkas
-         nc - Nocturnes
-         nn - Not applicable
-         op - Operas
-         or - Oratorios
-         ov - Overtures
-         pg - Program music
-         pm - Passion music
-         po - Polonaises
-         pp - Popular music
-         pr - Preludes
-         ps - Passacaglias
-         pt - Part-songs
-         pv - Pavans
-         rc - Rock music
-         rd - Rondos
-         rg - Ragtime music
-         ri - Ricercars
-         rp - Rhapsodies
-         rq - Requiems
-         sd - Square dance music
-         sg - Songs
-         sn - Sonatas
-         sp - Symphonic poems
-         st - Studies and exercises
-         su - Suites
-         sy - Symphonies
-         tc - Toccatas
-         tl - Teatro lirico
-         ts - Trio-sonatas
-         uu - Unknown
-         vi - Villancicos 
-         vr - Variations
-         wz - Waltzes
-         za - Zarzuelas
-         zz - Other
-         || - No attempt to code
-      20 - Format of music
-         a - Full score
-         b - Full score, miniature or study size
-         c - Accompaniment reduced for keyboard
-         d - Voice score with accompaniment omitted
-         e - Condensed score or piano-conductor score
-         g - Close score
-         h - Chorus score
-         i - Condensed score
-         j - Performer-conductor part
-         k - Vocal score
-         l - Score
-         m - Multiple score formats
-         n - Not applicable
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      21 - Music parts
-         # - No parts in hand or not specified
-         d - Instrumental and vocal parts
-         e - Instrumental parts
-         f - Vocal parts
-         n - Not applicable
-         u - Unknown
-         | - No attempt to code
-      21 - Existence of parts [OBSOLETE]
-         # - No parts exist
-         a - Parts exist
-         n - Not applicable
-         u - Unknown
-      22 - Target audience
-         # - Unknown or not specified
-         a - Preschool
-         b - Primary
-         c - Pre-adolescent
-         d - Adolescent
-         e - Adult
-         f - Specialized
-         g - General
-         j - Juvenile
-         | - No attempt to code
-      23 - Form of item
-         # - None of the following
-         a - Microfilm
-         b - Microfiche
-         c - Microopaque
-         d - Large print
-         f - Braille
-         g - Punched paper tape [   ]
-         h - Magnetic tape [OBSOLETE]
-         i - Multimedia [OBSOLETE]
-         o - Online
-         q - Direct electronic
-         r - Regular print reproduction
-         s - Electronic
-         x - Other form of reproduction [OBSOLETE]
-         z - Other form of reproduction [OBSOLETE]
-         | - No attempt to code
-      24-29 - Accompanying matter
-         # - No accompanying matter
-         a - Discography
-         b - Bibliography
-         c - Thematic index
-         d - Libretto or text
-         e - Biography of composer or author
-         f - Biography of performer or history of ensemble
-         g - Technical and/or historical information on instruments
-         h - Technical information on music
-         i - Historical information
-         j - Historical information other than music [OBSOLETE]
-         k - Ethnological information
-         n - Not applicable [OBSOLETE]
-         r - Instructional materials
-         s - Music
-         z - Other
-         | - No attempt to code
-      30-31 - Literary text for sound recordings
-         # - Item is a musical sound recording
-         a - Autobiography
-         b - Biography
-         c - Conference proceedings
-         d - Drama
-         e - Essays
-         f - Fiction
-         g - Reporting
-         h - History
-         i - Instruction
-         j - Language instruction
-         k - Comedy
-         l - Lectures, speeches
-         m - Memoirs
-         n - Not applicable
-         o - Folktales
-         p - Poetry
-         r - Rehearsals
-         s - Sounds
-         t - Interviews
-         z - Other
-         | - No attempt to code
-      32 - Main entry in body of entry [OBSOLETE]
-         0 - Main entry not in body of entry
-         1 - Main entry in body of entry
-         | - No attempt to code
-      32 - Undefined
-      33 - Transposition and arrangement
-         # - Not arrangement or transposition or not specified
-         a - Transposition
-         b - Arrangement
-         c - Both transposed and arranged
-         n - Not applicable
-         u - Unknown
-         | - No attempt to code 
-      34 - Undefined
-  008--CONTINUING RESOURCES
-    Character Positions
-      18 - Frequency
-         # - No determinable frequency
-         a - Annual
-         b - Bimonthly
-         c - Semiweekly
-         d - Daily
-         e - Biweekly
-         f - Semiannual
-         g - Biennial
-         h - Triennial
-         i - Three times a week
-         j - Three times a month
-         k - Continuously updated
-         m - Monthly
-         q - Quarterly
-         s - Semimonthly
-         t - Three times a year
-         u - Unknown
-         w - Weekly
-         z - Other
-         | - No attempt to code
-      19 - Regularity
-         n - Normalized irregular
-         r - Regular
-         u - Unknown
-         x - Completely irregular
-         | - No attempt to code
-      20 - ISSN center [OBSOLETE]
-         # - No ISSN center code assigned
-         0 - International Center
-         1 - United States
-         2 - United Kingdom
-         3 - Australia [OBSOLETE]
-         4 - Canada
-         5 - Moscow Regional Centre [OBSOLETE]
-         6 - Federal Republic of Germany [OBSOLETE]
-         7 - France [OBSOLETE]
-         8 - Argentina [OBSOLETE]
-         9 - Japan [OBSOLETE]
-         u - Unknown [OBSOLETE]
-         z - Other
-         | - No attempt to code
-      21 - Type of continuing resource
-         # - None of the following
-         d - Updating database
-         l - Updating loose-leaf
-         m - Monographic series
-         n - Newspaper
-         p - Periodical
-         w - Updating Web site
-         | - No attempt to code
-      22 - Form of original item
-         # - None of the following
-         a - Microfilm
-         b - Microfiche
-         c - Microopaque
-         d - Large print
-         e - Newspaper format
-         f - Braille
-         g - Punched paper tape [OBSOLETE]
-         h - Magnetic tape [OBSOLETE] 
-         i - Multimedia [OBSOLETE]
-         o - Online
-         q - Direct electronic
-         s - Electronic
-         x - Other physical medium [OBSOLETE]
-         z - Other physical medium [OBSOLETE]
-         | - No attempt to code
-      23 - Form of item
-         # - None of the following
-         a - Microfilm
-         b - Microfiche
-         c - Microopaque
-         d - Large print
-         f - Braille
-         g - Punched paper tape [OBSOLETE]
-         h - Magnetic tape [OBSOLETE]
-         i - Multimedia [OBSOLETE]
-         o - Online
-         q - Direct electronic
-         r - Regular print reproduction
-         s - Electronic
-         z - Other form of reproduction [OBSOLETE]
-         | - No attempt to code
-      24 - Nature of entire work
-         # - No specified nature of entire work
-         a - Abstracts/summaries
-         b - Bibliographies
-         c - Catalogs
-         d - Dictionaries
-         e - Encyclopedias
-         f - Handbooks
-         g - Legal articles
-         h - Biography
-         i - Indexes
-         k - Discographies
-         l - Legislation
-         m - Theses
-         n - Surveys of literature in a subject area
-         n - Legal cases and case notes [OBSOLETE]
-         o - Reviews
-         p - Programmed texts
-         q - Filmographies
-         r - Directories
-         s - Statistics
-         t - Technical reports
-         u - Standards/specifications
-         v - Legal cases and case notes
-         w - Law reports and digests
-         y - Yearbooks
-         z - Treaties
-         5 - Calendars
-         6 - Comics/graphic novels
-         | - No attempt to code
-      25-27 - Nature of contents
-         # - No specified nature of contents
-         a - Abstracts/summaries
-         b - Bibliographies
-         c - Catalogs
-         d - Dictionaries
-         e - Encyclopedias
-         f - Handbooks
-         g - Legal articles
-         h - Biography
-         i - Indexes
-         k - Discographies
-         l - Legislation
-         m - Theses
-         n - Surveys of literature in a subject area
-         n - Legal cases and case notes [OBSOLETE]
-         o - Reviews
-         p - Programmed texts
-         q - Filmographies
-         r - Directories
-         s - Statistics
-         t - Technical reports
-         u - Standards/specifications
-         v - Legal cases and case notes
-         w - Law reports and digests
-         y - Yearbooks
-         z - Treaties
-         5 - Calendars
-         6 - Comics/graphic novels
-         | - No attempt to code
-      28 - Government publication
-         # - Not a government publication
-         a - Autonomous or semi-autonomous component
-         c - Multilocal
-         f - Federal/national
-         i - International intergovernmental
-         l - Local
-         m - Multistate
-         n - Government publication--level undetermined [OBSOLETE]
-         o - Government publication--level undetermined
-         s - State, provincial, territorial, dependent,etc.
-         u - Unknown if item is government publication
-         z - Other
-         | - No attempt to code
-      29 - Conference publication
-         0 - Not a conference publication
-         1 - Conference publication
-         | - No attempt to code
-      30-32 - Undefined
-      30 - Title page availability [OBSOLETE]
-         # - No separate title page issued
-         a - In last issue of volume, loose
-         b - In last issue of volume, attached
-         c - In first issue of next volume, loose
-         d - In first issue of next volume, attached
-         e - Published separately, free upon request
-         f - Published separately, free, automatically sent
-         g - Published separately, purchase, request
-         u - Unknown
-         z - Other title page availability
-         | - No attempt to code
-      31 - Index availability [OBSOLETE]
-         # - No index published
-         a - Each issue contains index to its own contents (no volume index), loose
-         b - In last issue of volume, loose, separately paged
-         c - In last issue of volume, loose, unpaged
-         d - In last issue of volume, attached
-         e - In first issue of next volume, loose, separately paged
-         f - In first issue of next volume, loose, unpaged
-         g - In first issue of next volume, attached
-         h - Published separately, free, automatically sent
-         i - Published separately, free, upon request
-         j - Published separately, bound from publisher, free, automatically sent
-         k - Published separately, bound from publisher, free, upon request
-         l - Received separately, bound from publisher
-         m - Supplement or subseries, indexed in parent journal index
-         u - Unknown
-         z - Other index availability
-         | - No attempt to code
-      32 - Cumulative index availability [OBSOLETE]
-         0 - No cumulative index available
-         1 - Cumulative index available
-         u - Unknown
-         | - No attempt to code
-      33 - Original alphabet or script of title
-         # - No alphabet or script given/no key title
-         a - Basic roman
-         b - Extended roman
-         c - Cyrillic
-         d - Japanese
-         e - Chinese
-         f - Arabic
-         g - Greek
-         h - Hebrew
-         i - Thai
-         j - Devanagari
-         k - Korean
-         l - Tamil
-         u - Unknown
-         z - Other
-         | - No attempt to code
-      34 - Entry convention
-         0 - Successive entry
-         1 - Latest entry
-         2 - Integrated entry
-         | - No attempt to code
-  008--VISUAL MATERIALS
-    Character Positions
-      18-20 - Running time for motion pictures and videorecordings
-         000 - Running time exceeds three characters
-         001-999 - Running time
-         --- - Running time unknown
-         nnn - Not applicable
-         ||| - No attempt to code
-      21 - Undefined
-      21 - In LC collection [OBSOLETE]
-         # - Not in LC
-         a - In LC, print note
-         b - In LC, do not print note
-         u - Unknown
-      22 - Target audience
-         # - Unknown or not specified
-         a - Preschool
-         b - Primary
-         c - Pre-adolescent
-         d - Adolescent
-         e - Adult
-         f - Specialized
-         g - General
-         j - Juvenile
-         | - No attempt to code
-      23-27 - Undefined
-      23-27 - Accompanying matter [OBSOLETE]
-         # - No accompanying matter
-         0 - No [OBSOLETE]
-         1 - Yes [OBSOLETE]
-         l - Stills
-         m - Script material
-         o - Posters
-         p - Pressbooks
-         q - Lobby cards
-         r - Instructional materials
-         s - Music
-         z - Other
-         | - No attempt to code
-      28 - Government publication
-         # - Not a government publication
-         a - Autonomous or semi-autonomous component
-         c - Multilocal
-         f - Federal/national
-         i - International intergovernmental
-         l - Local
-         m - Multistate
-         n - Government publication--level undetermined [OBSOLETE]
-         o - Government publication--level undetermined
-         s - State, provincial, territorial, dependent, etc.
-         u - Unknown if item is government publication
-         z - Other
-         | - No attempt to code
-      29 - Form of item
-         # - None of the following
-         a - Microfilm
-         b - Microfiche
-         c - Microopaque
-         d - Large print
-         f - Braille
-         o - Online
-         q - Direct electronic
-         r - Regular print reproduction
-         s - Electronic
-         | - No attempt to code
-      30-32 - Undefined
-      32 - Main entry in body of entry [OBSOLETE]
-         0 - Main entry not in body of entry
-         1 - Main entry in body of entry
-         | - No attempt to code
-      33 - Type of visual material
-         a - Art original
-         b - Kit
-         c - Art reproduction
-         d - Diorama
-         e - Electronic videorecording [OBSOLETE]
-         f - Filmstrip
-         g - Game
-         i - Picture
-         k - Graphic
-         l - Technical drawing
-         m - Motion picture
-         n - Chart
-         o - Flash card
-         p - Microscope slide
-         q - Model
-         r - Realia
-         s - Slide
-         t - Transparency
-         v - Videorecording
-         w - Toy
-         z - Other
-         | - No attempt to code
-      34 - Technique
-         # - Not applicable [OBSOLETE]
-         a - Animation
-         c - Animation and live action
-         l - Live action
-         n - Not applicable
-         u - Unknown
-         z - Other technique
-         | - No attempt to code
-  008--MIXED MATERIALS
-    Character Positions
-      18-22 - Undefined
-      23 - Form of item
-         # - None of the following
-         a - Microfilm
-         b - Microfiche
-         c - Microopaque
-         d - Large print
-         f - Braille
-         g - Punched paper tape [OBSOLETE]
-         h - Magnetic tape [OBSOLETE]
-         i - Multimedia [OBSOLETE]
-         j - Handwritten transcript [OBSOLETE]
-         o - Online
-         p - Photocopy [OBSOLETE]
-         q - Direct electronic
-         r - Regular print reproduction
-         s - Electronic
-         t - Typewritten transcript [OBSOLETE]
-         z - Other form of reproduction [OBSOLETE]
-         | - No attempt to code
-      24-34 - Undefined
-      30 - Case file indicator [OBSOLETE]
-         # - No case file exists
-         c - Case file exists
-      32 - Processing status code [OBSOLETE]
-         a - Collection not in library
-         b - Completely processed
-         c - Processed but with unprocessed additions
-         d - Requires processing
-         e - Totally unprocessed
-         f - Under total cloture
-         u - Unknown
-      33 - Collection status code [OBSOLETE]
-         a - Discrete grouping of material
-         b - Accession
-         c - Active solicitation
-         d - Solicitation unsuccessful
-         e - Information file only
-         u - Unknown
-      34 - Level of collection control code [OBSOLETE]
-         a - Control on collection level
-         b - Control by series
-         c - Control by container
-         d - Control by folder
-         e - Control by item
-         u - Unknown
-
-009 - PHYSICAL DESCRIPTION FIXED-FIELD FOR ARCHIVAL COLLECTION (VM) - [OBSOLETE]
-    Character Positions
-      00 - Genealogical stage
-      01 - Technical stage
-      02 - Color stage
-      03 - Film emulsion
-      04 - Film base
-      05 - Negative or positive sound
-      06 - Additional types of color
-      07 - Longitudinal shrinkage
-      08 - Perforation shrinkage
-      09 - Film deterioration
-      10 - Completeness
-      11-14 - Film inspection date
-
 
 --Number and Code Fields (01X-04X)--
 010 - LIBRARY OF CONGRESS CONTROL NUMBER (NR)
@@ -7275,3 +5061,2218 @@
    Subfield Codes
       $a - Content of non-MARC field (NR)
       $2 - Source of data (NR)
+
+--Leader and Directory--
+  LEADER
+     Character Positions
+     00-04 - Logical record length
+     05 - Record status
+         a - Increase in encoding level
+         c - Corrected or revised
+         d - Deleted
+         n - New
+         p - Increase in encoding level from prepublication
+     06 - Type of record
+         a - Language material
+         b - Archival and manuscripts control [OBSOLETE]
+         c - Notated music
+         d - Manuscript notated music
+         e - Cartographic material
+         f - Manuscript cartographic material
+         g - Projected medium
+         h - Microform publications [OBSOLETE]
+         i - Nonmusical sound recording
+         j - Musical sound recording
+         k - Two-dimensional nonprojectable graphic
+         m - Computer file
+         n - Special instructional material [OBSOLETE]
+         o - Kit
+         p - Mixed material
+         r - Three-dimensional artifact or naturally occurring object
+         t - Manuscript language material
+     07 - Bibliographic level
+         a - Monographic component part
+         b - Serial component part
+         c - Collection
+         d - Subunit
+         i - Integrating resource
+         m - Monograph/item
+         s - Serial
+     08 - Type of control
+         # - No specific type
+         a - Archival
+     09 - Character coding scheme
+         # - MARC-8
+         a - UCS/Unicode
+     10 - Indicator count
+     11 - Subfield code count
+     12-16 - Base address of data
+     17 - Encoding level
+         # - Full level
+         1 - Full level, material not examined
+         2 - Less-than-full level, material not examined
+         3 - Abbreviated level
+         4 - Core level
+         5 - Partial (preliminary) level
+         7 - Minimal level
+         8 - Prepublication level
+         u - Unknown
+         z - Not applicable
+     18 - Descriptive cataloging form
+         # - Non-ISBD
+         a - AACR 2
+         c - ISBD punctuation omitted
+         i - ISBD punctuation included
+         p - Partial ISBD (BK) [OBSOLETE]
+         r - Provisional (VM MP MU) [OBSOLETE]
+         u - Unknown
+     19 - Multipart resource record level
+         # - Not specified or not applicable
+         a - Set
+         b - Part with independent title
+         c - Part with dependent title 
+     20-23 - Entry map
+     20 - Length of the length-of-field portion
+     21 - Length of the starting-character-position portion
+     22 - Length of the implementation-defined portion
+     23 - Undefined Entry map character position
+
+   DIRECTORY
+   Character Positions
+      00-02 - Tag
+      03-06 - Field length
+      07-11 - Starting character position
+
+
+--Control Fields (001-006)--
+001 - CONTROL NUMBER (NR)
+
+003 - CONTROL NUMBER IDENTIFIER (NR)
+
+005 - DATE AND TIME OF LATEST TRANSACTION (NR)
+
+006 - FIXED-LENGTH DATA ELEMENTS--ADDITIONAL MATERIAL CHARACTERISTICS--GENERAL INFORMATION (R)
+  006--BOOKS
+    Character Positions
+     00 - Form of material
+        a - Language material
+        t - Manuscript language material
+     01-04 - Illustrations
+     05 - Target audience
+     06 - Form of item
+     07-10 - Nature of contents
+     11 - Government publication
+     12 - Conference publication
+     13 - Festschrift
+     14 - Index
+     15 - Undefined
+     16 - Literary form
+     17 - Biography
+  006--COMPUTER FILES/ELECTRONIC RESOURCES
+    Character Positions
+     00 - Form of material
+        m - Computer file/Electronic resource
+     01-04 - Undefined
+     05 - Target audience
+     06 - Form of item
+     07-08 - Undefined
+     09 - Type of computer file
+     10 - Undefined
+     11 - Government publication
+     12-17 - Undefined
+  006--MAPS
+    Character Positions
+     00 - Form of material
+        e - Cartographic material
+        f - Manuscript cartographic material
+     01-04 - Relief
+     05-06 - Projection
+     07 - Undefined
+     07 - Prime meridian [OBSOLETE]
+     08 - Type of cartographic material
+     09-10 - Undefined
+     11 - Government publication
+     12 - Form of item
+     12 - Undefined [OBSOLETE]
+     13 - Undefined
+     14 - Index
+     15 - Undefined
+     16-17 - Special format characteristics
+  006--MIXED MATERIALS
+    Character Positions
+     00 - Form of material
+        p - Mixed material
+     01-05 - Undefined
+     06 - Form of item
+     07-17 - Undefined
+  006--MUSIC
+    Character Positions
+     00 - Form of material
+        c - Notated music
+        d - Manuscript notated music
+        i - Nonmusical sound recording
+        j - Musical sound recording
+     01-02 - Form of composition
+     03 - Format of music
+     04 - Music parts
+     05 - Target audience
+     06 - Form of item
+     07-12 - Accompanying matter
+     13-14 - Literary text for sound recordings
+     15 - Undefined
+     16 - Transposition and arrangement
+     17 - Undefined
+  006--CONTINUING RESOURCES
+    Character Positions
+     00 - Form of material
+        s - Serial/Integrating resource
+     01 - Frequency
+     02 - Regularity
+     03 - ISSN Center [OBSOLETE]
+     04 - Type of continuing resource
+     05 - Form of original item
+     06 - Form of item
+     07 - Nature of entire work
+     08-10 - Nature of contents
+     11 - Government publication
+     12 - Conference publication
+     13-15 - Undefined
+     16 - Original alphabet or script of title
+     17 - Entry convention
+  006--VISUAL MATERIALS
+    Character Positions
+     00 - Form of material
+        g - Projected medium
+        k - Two-dimensional nonprojectable graphic
+        o - Kit
+        r - Three-dimensional artifact or naturally occurring object
+     01-03 - Running time
+     04 - Undefined
+     05 - Target audience
+     06-10 - Undefined
+     06-10 - Accompanying matter [OBSOLETE]
+     11 - Government publication
+     12 - Form of item
+     12 - Undefined [OBSOLETE]
+     13-15 - Undefined
+     16 - Type of visual material
+     17 - Technique
+	 
+--Control Field 007--
+007 - PHYSICAL DESCRIPTION FIXED FIELD--GENERAL INFORMATION (R)
+  007--MAP
+    Character Positions
+      00 - Category of material
+         a - Map
+      01 - Specific material designation
+         d - Atlas
+         g - Diagram
+         j - Map
+         k - Profile
+         q - Model
+         r - Remote-sensing image
+         s - Section
+         u - Unspecified
+         y - View
+         z - Other
+         | - No attempt to code
+      02 - Undefined
+      03 - Color
+         a - One color
+         c - Multicolored
+         | - No attempt to code
+      04 - Physical medium
+         a - Paper
+         b - Wood
+         c - Stone
+         d - Metal
+         e - Synthetic
+         f - Skin
+         g - Textile
+         i - Plastic
+         j - Glass
+         l - Vinyl
+         n - Vellum
+         p - Plaster
+         q - Flexible base photographic, positive
+         r - Flexible base photographic, negative
+         s - Non-flexible base photographic, positive
+         t - Non-flexible base photographic, negative
+         u - Unknown
+         v - Leather
+         w - Parchment
+         y - Other photographic medium
+         z - Other
+         | - No attempt to code
+      05 - Type of reproduction
+         f - Facsimile
+         n - Not applicable
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      06 - Production/reproduction details
+         a - Photocopy, blueline print
+         b - Photocopy
+         c - Pre-production
+         d - Film
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      07 - Positive/negative aspect
+         a - Positive
+         b - Negative
+         m - Mixed polarity
+         n - Not applicable
+         | - No attempt to code
+   007--ELECTRONIC RESOURCE
+     Character Positions
+      00 - Category of material
+         c - Computer file
+      01 - Specific material designation
+         a - Tape cartridge
+         b - Chip cartridge
+         c - Computer optical disc cartridge
+         d - Computer disc, type unspecified
+         e - Computer disc cartridge, type unspecified
+         f - Tape cassette
+         h - Tape reel
+         j - Magnetic disk
+         k - Computer card
+         m - Magneto-optical disc
+         o - Optical disc
+         r - Remote
+         u - Unspecified
+         z - Other
+         | - No attempt to code
+      02 - Undefined
+      03 - Color
+         a - One color
+         b - Black-and-white
+         c - Multicolored
+         g - Gray scale
+         m - Mixed
+         n - Not applicable
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      04 - Dimensions
+         a - 3 1/2 in.
+         e - 12 in.
+         g - 4 3/4 in. or 12 cm.
+         i - 1 1/8 x 2 3/8 in.
+         j - 3 7/8 x 2 1/2 in.
+         n - Not applicable
+         o - 5 1/4 in.
+         u - Unknown
+         v - 8 in.
+         z - Other
+         | - No attempt to code
+      05 - Sound
+         # - No sound (silent)
+         a - Sound on medium
+         u - Unknown
+         | - No attempt to code
+      06-08 - Image bit depth
+         001-999 - Exact bit depth
+         mmm - Multiple
+         nnn - Not applicable
+         --- - Unknown
+         ||| - No attempt to code
+      09 - File formats
+         a - One
+         m - Multiple
+         u - Unknown
+         | - No attempt to code
+      10 - Quality assurance target(s)
+         a - Absent
+         n - Not applicable
+         p - Present
+         u - Unknown
+         | - No attempt to code
+      11 - Antecedent/source
+         a - File reproduced from original
+         b - File reproduced from microform
+         c - File reproduced from an electronic resource
+         d - File reproduced from an intermediate (not microform)
+         m - Mixed
+         n - Not applicable
+         u - Unknown
+         | - No attempt to code
+      12 - Level of compression
+         a - Uncompressed
+         b - Lossless
+         d - Lossy
+         m - Mixed
+         u - Unknown
+         | - No attempt to code
+      13 - Reformatting quality
+         a - Access
+         n - Not applicable
+         p - Preservation
+         r - Replacement
+         u - Unknown
+         | - No attempt to code
+   007--GLOBE
+     Character Positions
+      00 - Category of material
+         d - Globe
+      01 - Specific material designation
+         a - Celestial globe
+         b - Planetary or lunar globe
+         c - Terrestrial globe
+         e - Earth moon globe
+         u - Unspecified
+         z - Other
+         | - No attempt to code
+      02 - Undefined
+      03 - Color
+         a - One color
+         c - Multicolored
+         | - No attempt to code
+      04 - Physical medium
+         a - Paper
+         b - Wood
+         c - Stone
+         d - Metal
+         e - Synthetic
+         f - Skin
+         g - Textile
+         i - Plastic
+         l - Vinyl
+         n - Vellum
+         p - Plaster
+         u - Unknown
+         v - Leather
+         w - Parchment
+         z - Other
+         | - No attempt to code
+      05 - Type of reproduction
+         f - Facsimile
+         n - Not applicable
+         u - Unknown
+         z - Other
+         | - No attempt to code
+   007--TACTILE MATERIAL
+     Character Positions
+      00 - Category of material
+         f - Tactile material
+      01 - Specific material designation
+         a - Moon
+         b - Braille
+         c - Combination
+         d - Tactile, with no writing system
+         u - Unspecified
+         z - Other
+         | - No attempt to code
+      02 - Undefined
+      03-04 - Class of braille writing
+         # - No specified class of braille writing
+         a - Literary braille
+         b - Format code braille
+         c - Mathematics and scientific braille
+         d - Computer braille
+         e - Music braille
+         m - Multiple braille types
+         n - Not applicable
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      05 - Level of contraction
+         a - Uncontracted
+         b - Contracted
+         m - Combination
+         n - Not applicable
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      06-08 - Braille music format
+         # - No specified braille music format
+         a - Bar over bar
+         b - Bar by bar
+         c - Line over line
+         d - Paragraph
+         e - Single line
+         f - Section by section
+         g - Line by line
+         h - Open score
+         i - Spanner short form scoring
+         j - Short form scoring
+         k - Outline
+         l - Vertical score
+         n - Not applicable
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      09 - Specific physical characteristics
+         a - Print/braille
+         b - Jumbo or enlarged braille
+         n - Not applicable
+         u - Unknown
+         z - Other
+         | - No attempt to code
+   007--PROJECTED GRAPHIC
+     Character Positions
+      00 - Category of material
+         g - Projected graphic
+      01 - Specific material designation
+         c - Filmstrip cartridge
+         d - Filmslip
+         f - Filmstrip, type unspecified
+         o - Filmstrip roll
+         s - Slide
+         t - Transparency
+         u - Unspecified
+         z - Other
+         | - No attempt to code
+      02 - Undefined
+      03 - Color
+         a - One color
+         b - Black-and-white
+         c - Multicolored
+         h - Hand colored
+         m - Mixed
+         n - Not applicable
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      04 - Base of emulsion
+         d - Glass
+         e - Synthetic
+         j - Safety film
+         k - Film base, other than safety film
+         m - Mixed collection
+         o - Paper
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      05 - Sound on medium or separate
+         # - No sound (silent)
+         a - Sound on medium
+         b - Sound separate from medium
+         u - Unknown
+         | - No attempt to code
+      06 - Medium for sound
+         # - No sound (silent)
+         a - Optical sound track on motion picture film
+         b - Magnetic sound track on motion picture film
+         c - Magnetic audio tape in cartridge
+         d - Sound disc
+         e - Magnetic audio tape on reel
+         f - Magnetic audio tape in cassette
+         g - Optical and magnetic sound track on motion picture film
+         h - Videotape
+         i - Videodisc
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      07 - Dimensions
+         a - Standard 8 mm.
+         b - Super 8 mm./single 8 mm.
+         c - 9.5 mm.
+         d - 16 mm.
+         e - 28 mm.
+         f - 35 mm.
+         g - 70 mm.
+         j - 2x2 in. or 5x5 cm.
+         k - 2 1/4 x 2 1/4 in. or 6x6 cm.
+         s - 4x5 in. or 10x13 cm.
+         t - 5x7 in. or 13x18 cm.
+         u - Unknown
+         v - 8x10 in. or 21x26 cm.
+         w - 9x9 in. or 23x23 cm.
+         x - 10x10 in. or 26x26 cm.
+         y - 7x7 in. or 18x18 cm.
+         z - Other
+         | - No attempt to code
+      08 - Secondary support material
+         # - No secondary support
+         c - Cardboard
+         d - Glass
+         e - Synthetic
+         h - Metal
+         j - Metal and glass
+         k - Synthetic and glass
+         m - Mixed collection
+         u - Unknown
+         z - Other
+         | - No attempt to code
+   007--MICROFORM
+     Character Positions
+      00 - Category of material
+         h - Microform
+      01 - Specific material designation
+         a - Aperture card
+         b - Microfilm cartridge
+         c - Microfilm cassette
+         d - Microfilm reel
+         e - Microfiche
+         f - Microfiche cassette
+         g - Microopaque
+         h - Microfilm slip
+         j - Mircrofilm roll
+         u - Unspecified
+         z - Other
+         | - No attempt to code
+      02 - Undefined
+      03 - Positive/negative aspect
+         a - Positive
+         b - Negative
+         m - Mixed polarity
+         u - Unknown
+         | - No attempt to code
+      04 - Dimensions
+         a - 8 mm.
+         d - 16 mm.
+         f - 35 mm.
+         g - 70 mm.
+         h - 105 mm.
+         l - 3x5 in. or 8x13 cm.
+         m - 4x6 in. or 11x15 cm.
+         o - 6x9 in. or 16x23 cm.
+         p - 3 1/4 x 7 3/8 in. or 9x19 cm.
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      05 - Reduction ratio range
+         a - Low reduction
+         b - Normal reduction
+         c - High reduction
+         d - Very high reduction
+         e - Ultra high reduction
+         u - Unknown
+         v - Reduction rate varies
+         | - No attempt to code
+      06-08 - Reduction ratio
+      09 - Color
+         b - Black-and-white (or monochrome)
+         c - Multicolored
+         m - Mixed
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      10 - Emulsion on film
+         a - Silver halide
+         b - Diazo
+         c - Vesicular
+         m - Mixed emulsion
+         n - Not applicable
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      11 - Generation
+         a - First generation (master)
+         b - Printing master
+         c - Service copy
+         m - Mixed generation
+         u - Unknown
+         | - No attempt to code
+      12 - Base of film
+         a - Safety base, undetermined
+         c - Safety base, acetate undetermined
+         d - Safety base, diacetate
+         p - Safety base, polyester
+         r - Safety base, mixed
+         t - Safety base, triacetate
+         i - Nitrate base
+         m - Mixed base (nitrate and safety)
+         n - Not applicable
+         u - Unknown
+         z - Other
+         | - No attempt to code
+   007--NONPROJECTED GRAPHIC
+     Character Positions
+      00 - Category of material
+         k - Nonprojected graphic
+      01 - Specific material designation
+         a - Activity card
+         c - Collage
+         d - Drawing
+         e - Painting
+         f - Photomechanical print
+         g - Photonegative
+         h - Photoprint
+         i - Picture
+         j - Print
+         k - Poster
+         l - Technical drawing
+         n - Chart
+         o - Flash card
+         p - Postcard
+         q - Icon
+         r - Radiograph
+         s - Study print
+         u - Unspecified
+         v - Photograph, type unspecified
+         z - Other
+         | - No attempt to code
+      02 - Undefined
+      03 - Color
+         a - One color
+         b - Black-and-white
+         c - Multicolored
+         h - Hand colored
+         m - Mixed
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      04 - Primary support material
+         a - Canvas
+         b - Bristol board
+         c - Cardboard/illustration board
+         d - Glass
+         e - Synthetic
+         f - Skin
+         g - Textile
+         h - Metal
+         i - Plastic
+         l - Vinyl
+         m - Mixed collection
+         n - Vellum
+         o - Paper
+         p - Plaster
+         q - Hardboard
+         r - Porcelain
+         s - Stone
+         t - Wood
+         u - Unknown
+         v - Leather
+         w - Parchment
+         z - Other
+         | - No attempt to code
+      05 - Secondary support material
+         # - No secondary support
+         a - Canvas
+         b - Bristol board
+         c - Cardboard/illustration board
+         d - Glass
+         e - Synthetic
+         f - Skin
+         g - Textile
+         h - Metal
+         i - Plastic
+         l - Vinyl
+         m - Mixed collection
+         n - Vellum
+         o - Paper
+         p - Plaster
+         q - Hardboard
+         r - Porcelain
+         s - Stone
+         t - Wood
+         u - Unknown
+         v - Leather
+         w - Parchment
+         z - Other
+         | - No attempt to code
+   007--MOTION PICTURE
+     Character Positions
+      00 - Category of material
+         m - Motion picture
+      01 - Specific material designation
+         c - Film cartridge
+         f - Film cassette
+         o - Film roll
+         r - Film reel
+         u - Unspecified
+         z - Other
+         | - No attempt to code
+      02 - Undefined
+      03 - Color
+         b - Black-and-white
+         c - Multicolored
+         h - Hand colored
+         m - Mixed
+         n - Not applicable
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      04 - Motion picture presentation format
+         a - Standard sound aperture (reduced frame)
+         b - Nonanamorphic (wide-screen)
+         c - 3D
+         d - Anamorphic (wide-screen)
+         e - Other wide-screen format
+         f - Standard silent aperture (full frame)
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      05 - Sound on medium or separate
+         # - No sound (silent)
+         a - Sound on medium
+         b - Sound separate from medium
+         u - Unknown
+         | - No attempt to code
+      06 - Medium for sound
+         # - No sound (silent)
+         a - Optical sound track on motion picture film
+         b - Magnetic sound track on motion picture film
+         c - Magnetic audio tape in cartridge
+         d - Sound disc
+         e - Magnetic audio tape on reel
+         f - Magnetic audio tape in cassette
+         g - Optical and magnetic sound track on motion picture film
+         h - Videotape
+         i - Videodisc
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      07 - Dimensions
+         a - Standard 8 mm.
+         b - Super 8 mm./single 8 mm.
+         c - 9.5 mm.
+         d - 16 mm.
+         e - 28 mm.
+         f - 35 mm.
+         g - 70 mm.
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      08 - Configuration of playback channels
+         k - Mixed
+         m - Monaural
+         n - Not applicable
+         q - Quadraphonic, multichannel, or surround
+         s - Stereophonic
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      09 - Production elements
+         a - Workprint
+         b - Trims
+         c - Outtakes
+         d - Rushes
+         e - Mixing tracks
+         f - Title bands/intertitle rolls
+         g - Production rolls
+         n - Not applicable
+         z - Other
+         | - No attempt to code
+      10 - Positive/negative aspect
+         a - Positive
+         b - Negative
+         n - Not applicable
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      11 - Generation
+         d - Duplicate
+         e - Master
+         o - Original
+         r - Reference print/viewing copy
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      12 - Base of film
+         a - Safety base, undetermined
+         c - Safety base, acetate undetermined
+         d - Safety base, diacetate
+         p - Safety base, polyester
+         r - Safety base, mixed
+         t - Safety base, triacetate
+         i - Nitrate base
+         m - Mixed base (nitrate and safety)
+         n - Not applicable
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      13 - Refined categories of color
+         a - 3 layer color
+         b - 2 color, single strip
+         c - Undetermined 2 color
+         d - Undetermined 3 color
+         e - 3 strip color
+         f - 2 strip color
+         g - Red strip
+         h - Blue or green strip
+         i - Cyan strip
+         j - Magenta strip
+         k - Yellow strip
+         l - S E N 2
+         m - S E N 3
+         n - Not applicable
+         p - Sepia tone
+         q - Other tone
+         r - Tint
+         s - Tinted and toned
+         t - Stencil color
+         u - Unknown
+         v - Hand colored
+         z - Other
+         | - No attempt to code
+      14 - Kind of color stock or print
+         a - Imbibition dye transfer prints
+         b - Three layer stock
+         c - Three layer stock, low fade
+         d - Duplitized stock
+         n - Not applicable
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      15 - Deterioration stage
+         a - None apparent
+         b - Nitrate: suspicious odor
+         c - Nitrate: pungent odor
+         d - Nitrate: brownish, discoloration, fading, dusty
+         e - Nitrate: sticky
+         f - Nitrate: frothy, bubbles, blisters
+         g - Nitrate: congealed
+         h - Nitrate: powder
+         k - Non-nitrate: detectable deterioration (diacetate odor)
+         l - Non-nitrate: advanced deterioration
+         m - Non-nitrate: disaster
+         | - No attempt to code
+      16 - Completeness
+         c - Complete
+         i - Incomplete
+         n - Not applicable
+         u - Unknown
+         | - No attempt to code
+      17-22 - Film inspection date
+   007--KIT
+     Character Positions
+      00 - Category of material
+         o - Kit
+      01 - Specific material designation
+         u - Unspecified
+         | - No attempt to code
+   007--NOTATED MUSIC
+     Character Positions
+      00 - Category of material
+         q - Notated music
+      01 - Specific material designation
+         u - Unspecified
+         | - No attempt to code
+   007--REMOTE-SENSING IMAGE
+     Character Positions
+      00 - Category of material
+         r - Remote-sensing image
+      01 - Specific material designation
+         u - Unspecified
+         | - No attempt to code
+      02 - Undefined
+      03 - Altitude of sensor
+         a - Surface
+         b - Airborne
+         c - Spaceborne
+         n - Not applicable
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      04 - Attitude of sensor
+         a - Low oblique
+         b - High oblique
+         c - Vertical
+         n - Not applicable
+         u - Unknown
+         | - No attempt to code
+      05 - Cloud cover
+         0 - 0-9%
+         1 - 10-19%
+         2 - 20-29%
+         3 - 30-39%
+         4 - 40-49%
+         5 - 50-59%
+         6 - 60-69%
+         7 - 70-79%
+         8 - 80-89%
+         9 - 90-100%
+         n - Not applicable
+         u - Unknown
+         | - No attempt to code
+      06 - Platform construction type
+         a - Balloon
+         b - Aircraft--low altitude
+         c - Aircraft--medium altitude
+         d - Aircraft--high altitude
+         e - Manned spacecraft
+         f - Unmanned spacecraft
+         g - Land-based remote-sensing device
+         h - Water surface-based remote-sensing device
+         i - Submersible remote-sensing device
+         n - Not applicable
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      07 - Platform use category
+         a - Meteorological
+         b - Surface observing
+         c - Space observing
+         m - Mixed uses
+         n - Not applicable
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      08 - Sensor type
+         a - Active
+         b - Passive
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      09-10 - Data type
+         aa - Visible light
+         da - Near infrared
+         db - Middle infrared
+         dc - Far infrared
+         dd - Thermal infrared
+         de - Shortwave infrared (SWIR)
+         df - Reflective infrared
+         dv - Combinations
+         dz - Other infrared data
+         ga - Sidelooking airborne radar (SLAR)
+         gb - Synthetic aperture radar (SAR)-Single frequency
+         gc - SAR-multi-frequency (multichannel)
+         gd - SAR-like polarization
+         ge - SAR-cross polarization
+         gf - Infometric SAR
+         gg - polarmetric SAR
+         gu - Passive microwave mapping
+         gz - Other microwave data
+         ja - Far ultraviolet
+         jb - Middle ultraviolet
+         jc - Near ultraviolet
+         jv - Ultraviolet combinations
+         jz - Other ultraviolet data
+         ma - Multi-spectral, multidata
+         mb - Multi-temporal
+         mm - Combination of various data types
+         nn - Not applicable
+         pa - Sonar--water depth
+         pb - Sonar--bottom topography images, sidescan
+         pc - Sonar--bottom topography, near surface
+         pd - Sonar--bottom topography, near bottom
+         pe - Seismic surveys
+         pz - Other acoustical data
+         ra - Gravity anomalies (general)
+         rb - Free-air
+         rc - Bouger
+         rd - Isostatic
+         sa - Magnetic field
+         ta - radiometric surveys
+         uu - Unknown
+         zz - Other
+         || - No attempt to code
+   007--SOUND RECORDING
+     Character Positions
+      00 - Category of material
+         s - Sound recording
+      01 - Specific material designation
+         d - Sound disc
+         e - Cylinder
+         g - Sound cartridge
+         i - Sound-track film
+         q - Roll
+         s - Sound cassette
+         t - Sound-tape reel
+         u - Unspecified
+         w - Wire recording
+         z - Other
+         | - No attempt to code
+      02 - Undefined
+      03 - Speed
+         a - 16 rpm
+         b - 33 1/3 rpm
+         c - 45 rpm
+         d - 78 rpm
+         e - 8 rpm
+         f - 1.4 m. per sec.
+         h - 120 rpm
+         i - 160 rpm
+         k - 15/16 ips
+         l - 1 7/8 ips
+         m - 3 3/4 ips
+         o - 7 1/2 ips
+         p - 15 ips
+         r - 30 ips
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      04 - Configuration of playback channels
+         m - Monaural
+         q - Quadraphonic, multichannel, or surround
+         s - Stereophonic
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      05 - Groove width/groove pitch
+         m - Microgroove/fine
+         n - Not applicable
+         s - Coarse/standard
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      06 - Dimensions
+         a - 3 in.
+         b - 5 in.
+         c - 7 in.
+         d - 10 in.
+         e - 12 in.
+         f - 16 in.
+         g - 4 3/4 in. or 12 cm.
+         j - 3 7/8 x 2 1/2 in.
+         o - 5 1/4 x 3 7/8 in.
+         n - Not applicable
+         s - 2 3/4 x 4 in.
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      07 - Tape width
+         l - 1/8 in.
+         m - 1/4 in.
+         n - Not applicable
+         o - 1/2 in.
+         p - 1 in.
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      08 - Tape configuration
+         a - Full (1) track
+         b - Half (2) track
+         c - Quarter (4) track
+         d - Eight track
+         e - Twelve track
+         f - Sixteen track
+         n - Not applicable
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      09 - Kind of disc, cylinder or tape
+         a - Master tape
+         b - Tape duplication master
+         d - Disc master (negative)
+         i - Instantaneous (recorded on the spot)
+         m - Mass produced
+         n - Not applicable
+         r - Mother (positive)
+         s - Stamper (negative)
+         t - Test pressing
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      10 - Kind of material
+         a - Lacquer coating
+         b - Cellulose nitrate
+         c - Acetate tape with ferrous oxide
+         g - Glass with lacquer
+         i - Aluminum with lacquer
+         r - Paper with lacquer or ferrous oxide
+         l - Metal
+         m - Plastic with metal
+         n - Not applicable [OBSOLETE]
+         p - Plastic
+         s - Shellac
+         u - Unknown
+         w - Wax
+         z - Other
+         | - No attempt to code
+      11 - Kind of cutting
+         h - Hill-and-dale cutting
+         l - Lateral or combined cutting
+         n - Not applicable
+         u - Unknown
+         | - No attempt to code
+      12 - Special playback characteristics
+         a - NAB standard
+         b - CCIR standard
+         c - Dolby-B encoded
+         d - dbx encoded
+         e - Digital recording
+         f - Dolby-A encoded
+         g - Dolby-C encoded
+         h - CX encoded
+         n - Not applicable
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      13 - Capture and storage technique
+         a - Acoustical capture, direct storage
+         b - Direct storage, not acoustical
+         d - Digital storage
+         e - Analog electrical storage
+         u - Unknown
+         z - Other
+         | - No attempt to code
+   007--TEXT
+     Character Positions
+      00 - Category of material
+         t - Text
+      01 - Specific material designation
+         a - Regular print
+         b - Large print
+         c - Braille
+         d - Text in looseleaf binder
+         u - Unspecified
+         z - Other
+         | - No attempt to code
+   007--VIDEORECORDING
+     Character Positions
+      00 - Category of material
+         v - Videorecording
+      01 - Specific material designation
+         c - Videocartridge
+         d - Videodisc
+         f - Videocassette
+         r - Videoreel
+         u - Unspecified
+         z - Other
+         | - No attempt to code
+      02 - Undefined
+      03 - Color
+         a - One color
+         b - Black-and-white
+         c - Multicolored
+         m - Mixed
+         n - Not applicable
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      04 - Videorecording format
+         a - Beta (1/2 in., videocassette)
+         b - VHS (1/2 in., videocassette)
+         c - U-matic (3/4 in., videocassette)
+         d - EIAJ (1/2 in. reel)
+         e - Type C (1 in., reel)
+         f - Quadruplex (1 in. or 2 in., reel)
+         g - Laserdisc
+         h - CED (Capacitance Electronic Disc) videodisc
+         i - Betacam (1/2 in., videocassette)
+         j - Betacam SP (1/2 in., videocassette)
+         k - Super-VHS (1/2 in., videocassette)
+         m - M-II (1/2 in., videocassette)
+         o - D-2 (3/4 in., videocassette)
+         p - 8 mm.
+         q - Hi-8 mm.
+         s - Blu-ray disc
+         u - Unknown
+         v - DVD
+         z - Other
+         | - No attempt to code
+      05 - Sound on medium or separate
+         # - No sound (silent)
+         a - Sound on medium
+         b - Sound separate from medium
+         u - Unknown
+         |- No attempt to code
+      06 - Medium for sound
+         # - No sound (silent)
+         a - Optical sound track on motion picture film
+         b - Magnetic sound track on motion picture film
+         c - Magnetic audio tape in cartridge
+         d - Sound disc
+         e - Magnetic audio tape on reel
+         f - Magnetic audio tape in cassette
+         g - Optical and magnetic sound track on motion picture film
+         h - Videotape
+         i - Videodisc
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      07 - Dimensions
+         a - 8 mm.
+         m - 1/4 in.
+         o - 1/2 in.
+         p - 1 in.
+         q - 2 in.
+         r - 3/4 in.
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      08 - Configuration of playback channels
+         k - Mixed
+         m - Monaural
+         n - Not applicable
+         q - Quadraphonic, multichannel, or surround
+         s - Stereophonic
+         u - Unknown
+         z - Other
+         | - No attempt to code
+   007--UNSPECIFIED
+     Character Positions
+      00 - Category of material
+         z - Unspecified
+      01 - Specific material designation
+         m - Multiple physical forms
+         u - Unspecified
+         z - Other
+         | - No attempt to code
+
+--Control Field 008--
+008 - FIXED-LENGTH DATA ELEMENTS--GENERAL INFORMATION (NR)
+  008--ALL MATERIALS
+    Character Positions
+      00-05 - Date entered on file
+      06 - Type of date/Publication status
+         b - No dates given; B.C. date involved
+         c - Continuing resource currently published
+         c - Actual date and copyright date [OBSOLETE]
+         d - Continuing resource ceased publication
+         d - Detailed date [OBSOLETE]
+         e - Detailed date
+         i - Inclusive dates of collection
+         k - Range of years of bulk of collection
+         m - Multiple dates
+         n - Dates unknown
+         p - Date of distribution/release/issue and production/recording session when different
+         q - Questionable date
+         r - Reprint/reissue date and original date
+         s - Single known date/probable date
+         t - Publication date and copyright date
+         u - Continuing resource status unknown
+         | - No attempt to code
+      07-10 - Date 1
+         1-9 - Date digit
+         # - Date element is not applicable
+         u - Date element is totally or partially unknown
+         | - No attempt to code
+      11-14 - Date 2
+         1-9 - Date digit
+         # - Date element is not applicable
+         u - Date element is totally or partially unknown
+         | - No attempt to code
+      15-17 - Place of publication, production, or execution
+      35-37 - Language
+      38 - Modified record
+         # - Not modified
+         d - Dashed-on information omitted
+         o - Completely romanized/printed cards romanized
+         r - Completely romanized/printed cards in script
+         s - Shortened
+         x - Missing characters
+         | - No attempt to code
+      39 - Cataloging source
+         # - National bibliographic agency
+         a - National Agricultural Library [OBSOLETE]
+         b - National Library of Medicine [OBSOLETE]
+         c - Cooperative cataloging program
+         d - Other
+         n - Report to [OBSOLETE]
+         u - Unknown
+         | - No attempt to code
+   008--BOOKS
+     Character Positions
+      18-21 - Illustrations
+         # - No illustrations
+         a - Illustrations
+         b - Maps
+         c - Portraits
+         d - Charts
+         e - Plans
+         f - Plates
+         g - Music
+         h - Facsimiles
+         i - Coats of arms
+         j - Genealogical tables
+         k - Forms
+         l - Samples
+         m - Phonodisc, phonowire, etc.
+         o - Photographs
+         p - Illuminations
+         | - No attempt to code
+      22 - Target audience
+         # - Unknown or not specified
+         a - Preschool
+         b - Primary
+         c - Pre-adolescent
+         d - Adolescent
+         e - Adult
+         f - Specialized
+         g - General
+         j - Juvenile
+         | - No attempt to code
+      23 - Form of item
+         # - None of the following
+         a - Microfilm
+         b - Microfiche
+         c - Microopaque
+         d - Large print
+         f - Braille
+         g - Punched paper tape [OBSOLETE]
+         h - Magnetic tape [OBSOLETE]
+         i - Multimedia [OBSOLETE]
+         o - Online
+         q - Direct electronic
+         r - Regular print reproduction
+         s - Electronic
+         z - Other form of reproduction [OBSOLETE]
+         | - No attempt to code
+      24-27 - Nature of contents
+         # - No specified nature of contents
+         a - Abstracts/summaries
+         b - Bibliographies
+         c - Catalogs
+         d - Dictionaries
+         e - Encyclopedias
+         f - Handbooks
+         g - Legal articles
+         h - Handbooks [OBSOLETE]
+         i - Indexes
+         j - Patent document
+         k - Discographies
+         l - Legislation
+         m - Theses
+         n - Surveys of literature in a subject area
+         o - Reviews
+         p - Programmed texts
+         q - Filmographies
+         r - Directories
+         s - Statistics
+         t - Technical reports
+         u - Standards/specifications
+         v - Legal cases and case notes
+         w - Law reports and digests
+         x - Technical reports [OBSOLETE]
+         y - Yearbooks
+         z - Treaties
+         2 - Offprints
+         5 - Calendars
+         6 - Comics/graphic novels
+         | - No attempt to code
+      28 - Government publication
+         # - Not a government publication
+         a - Autonomous or semi-autonomous component
+         c - Multilocal
+         f - Federal/national
+         i - International intergovernmental
+         l - Local
+         m - Multistate
+         n - Government publication--level undetermined [OBSOLETE]
+         o - Government publication--level undetermined
+         s - State, provincial, territorial, dependent, etc.
+         u - Unknown if item is government publication
+         z - Other
+         | - No attempt to code
+      29 - Conference publication
+         0 - Not a conference publication
+         1 - Conference publication
+         | - No attempt to code
+      30 - Festschrift
+         0 - Not a festschrift
+         1 - Festschrift
+         | - No attempt to code
+      31 - Index
+         0 - No index
+         1 - Index present
+         | - No attempt to code
+      32 - Undefined
+      32 - Main entry in body of entry [OBSOLETE]
+         0 - Main entry not in body of entry
+         1 - Main entry in body of entry
+         | - No attempt to code
+      33 - Literary form
+         0 - Not fiction (not further specified)
+         1 - Fiction (not further specified)
+         c - Comic strips [OBSOLETE]
+         d - Dramas
+         e - Essays
+         f - Novels
+         h - Humor, satires, etc.
+         i - Letters
+         j - Short stories
+         m - Mixed forms
+         p - Poetry
+         s - Speeches
+         u - Unknown
+         | - No attempt to code
+      34 - Biography
+         # - No biographical material
+         a - Autobiography
+         b - Individual biography
+         c - Collective biography
+         d - Contains biographical information
+         | - No attempt to code
+  008--COMPUTER FILES
+    Character Positions
+      18-21 - Undefined
+      18 - Frequency [OBSOLETE]
+         # - No determinable frequency
+         a - Annual
+         b - Bimonthly
+         c - Semiweekly
+         d - Daily
+         e - Biweekly
+         f - Semiannual
+         g - Biennial
+         h - Triennial
+         i - Three times a week
+         j - Three times a month
+         m - Monthly
+         n - Not applicable
+         q - Quarterly
+         s - Semimonthly
+         t - Three times a year
+         u - Unknown
+         w - Weekly
+         z - Other frequencies
+      19 - Regularity [OBSOLETE]
+         # - Not applicable
+         n - Normalized irregular
+         r - Regular
+         u - Unknown
+         x - Completely irregular
+      22 - Target audience
+         # - Unknown or not specified
+         a - Preschool
+         b - Primary
+         c - Pre-adolescent
+         d - Adolescent
+         e - Adult
+         f - Specialized
+         g - General
+         j - Juvenile
+         | - No attempt to code
+      23 - Form of item
+         o - Online
+         q - Direct electronic
+      24-25 - Undefined
+      26 - Type of computer file
+         a - Numeric data
+         b - Computer program
+         c - Representational
+         d - Document
+         e - Bibliographic data
+         f - Font
+         g - Game
+         h - Sound
+         i - Interactive multimedia
+         j - Online system or service
+         m - Combination
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      27 - Undefined
+      27 - Type of machine [OBSOLETE]
+         a - Computer readable
+         z - Other
+      28 - Government publication
+         # - Not a government publication
+         a - Autonomous or semi-autonomous component
+         c - Multilocal
+         f - Federal/national
+         i - International intergovernmental
+         l - Local
+         m - Multistate
+         o - Government publication--level undetermined
+         s - State, provincial, territorial, dependent, etc.
+         u - Unknown if item is government publication
+         z - Other
+         | - No attempt to code
+      29-34 - Undefined
+  008--MAPS
+    Character Positions
+      18-21 - Relief
+         # - No relief shown
+         a - Contours
+         b - Shading
+         c - Gradient and bathymetric tints
+         d - Hachures
+         e - Bathymetry/soundings
+         f - Form lines
+         g - Spot heights
+         h - Color [OBSOLETE]
+         i - Pictorially
+         j - Land forms
+         k - Bathymetry/isolines
+         m - Rock drawings
+         z - Other relief type
+         | - No attempt to code
+      22-23 - Projection
+         ## - Projection not specified
+         aa - Aitoff
+         ab - Gnomic
+         ac - Lambert's azimuthal equal area
+         ad - Orthographic
+         ae - Azimuthal equidistant
+         af - Stereographic
+         ag - General vertical near-sided
+         am - Modified stereographic for Alaska
+         an - Chamberlin trimetric
+         ap - Polar stereographic
+         au - Azimuthal, specific type unknown
+         az - Azimuthal, other
+         ba - Gall
+         bb - Goode's homolographic
+         bc - Lambert's cylindrical equal area
+         bd - Mercator
+         be - Miller
+         bf - Mollweide
+         bg - Sinusoidal
+         bh - Transverse Mercator
+         bi - Gauss-Kruger
+         bj - Equirectangular
+         bk - Krovak
+         bl - Cassini-Soldner
+         bo - Oblique Mercator
+         br - Robinson
+         bs - Space oblique Mercator
+         bu - Cylindrical, specific type unknown
+         bz - Cylindrical, other
+         ca - Alber's equal area
+         cb - Bonne
+         cc - Lambert's conformal conic
+         ce - Equidistant conic
+         cp - Polyconic
+         cu - Conic, specific type unknown
+         cz - Conic, other
+         da - Armadillo
+         db - Butterfly
+         dc - Eckert
+         dd - Goode's homolosine
+         de - Miller's bipolar oblique conformal conic
+         df - Van Der Grinten
+         dg - Dimaxion
+         dh - Cordiform
+         dl - Lambert conformal
+         zz - Other
+          | - No attempt to code
+      24 - Undefined
+      24 - Prime meridian [OBSOLETE]
+         # - Prime meridian not specified
+         e - Greenwich
+         f - Ferro
+         g - Paris
+         h - Other [OBSOLETE]
+         p - Philadelphia
+         w - Washington, D.C.
+         z - Other
+      25 - Type of cartographic material
+         a - Single map
+         b - Map series
+         c - Map serial
+         d - Globe
+         e - Atlas
+         f - Separate map supplement to another work
+         g - Map bound as part of another work
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      26-27 - Undefined
+      26-27 - Publisher code [OBSOLETE]
+      28 - Government publication
+         # - Not a government publication
+         a - Autonomous or semi-autonomous component
+         c - Multilocal
+         f - Federal/national
+         i - International intergovernmental
+         l - Local
+         m - Multistate
+         o - Government publication--level undetermined
+         s - State, provincial, territorial, dependent, etc.
+         u - Unknown if item is government publication
+         z - Other
+         | - No attempt to code
+      29 - Form of item
+         # - None of the following
+         a - Microfilm
+         b - Microfiche
+         c - Microopaque
+         d - Large print
+         f - Braille
+         o - Online
+         q - Direct electronic
+         r - Regular print reproduction
+         s - Electronic
+         | - No attempt to code
+      30 - Undefined
+      31 - Index
+         0 - No index
+         1 - Index present
+         | - No attempt to code
+      32 - Undefined
+      32 - Citation indicator [OBSOLETE]
+      33-34 - Special format characteristics
+         # - No specified special format characteristics
+         a - Photocopy, blue line print [OBSOLETE]
+         b - Photocopy [OBSOLETE]
+         c - Negative photocopy [OBSOLETE]
+         d - Film negative [OBSOLETE]
+         e - Manuscript
+         f - Facsimile [OBSOLETE]
+         g - Relief model [OBSOLETE]
+         h - Rare [OBSOLETE]
+         j - Picture card, post card
+         k - Calendar
+         l - Puzzle
+         m - Braille [OBSOLETE]
+         n - Game
+         o - Wall map
+         p - Playing cards
+         q - Large print [OBSOLETE]
+         r - Loose-leaf
+         z - Other
+         | - No attempt to code
+  008--MUSIC
+    Character Positions
+      18-19 - Form of composition
+         an - Anthems
+         bd - Ballads
+         bg - Bluegrass music
+         bl - Blues
+         bt - Ballets
+         ca - Chaconnes
+         cb - Chants, Other religions
+         cc - Chant, Christian
+         cg - Concerti grossi
+         ch - Chorales
+         cl - Chorale preludes
+         cn - Canons and rounds
+         co - Concertos
+         cp - Chansons, polyphonic
+         cr - Carols
+         cs - Chance compositions
+         ct - Cantatas
+         cy - Country music
+         cz - Canzonas
+         df - Dance forms
+         dv - Divertimentos, serenades, cassations, divertissements, notturni
+         fg - Fugues
+         fl - Flamenco
+         fm - Folk music
+         ft - Fantasias
+         gm - Gospel music
+         hy - Hymns
+         jz - Jazz
+         mc - Musical revues and comedies
+         md - Madrigals
+         mi - Minuets
+         mo - Motets
+         mp - Motion picture music
+         mr - Marches
+         ms - Masses
+         mu - Multiple forms
+         mz - Mazurkas
+         nc - Nocturnes
+         nn - Not applicable
+         op - Operas
+         or - Oratorios
+         ov - Overtures
+         pg - Program music
+         pm - Passion music
+         po - Polonaises
+         pp - Popular music
+         pr - Preludes
+         ps - Passacaglias
+         pt - Part-songs
+         pv - Pavans
+         rc - Rock music
+         rd - Rondos
+         rg - Ragtime music
+         ri - Ricercars
+         rp - Rhapsodies
+         rq - Requiems
+         sd - Square dance music
+         sg - Songs
+         sn - Sonatas
+         sp - Symphonic poems
+         st - Studies and exercises
+         su - Suites
+         sy - Symphonies
+         tc - Toccatas
+         tl - Teatro lirico
+         ts - Trio-sonatas
+         uu - Unknown
+         vi - Villancicos 
+         vr - Variations
+         wz - Waltzes
+         za - Zarzuelas
+         zz - Other
+         || - No attempt to code
+      20 - Format of music
+         a - Full score
+         b - Full score, miniature or study size
+         c - Accompaniment reduced for keyboard
+         d - Voice score with accompaniment omitted
+         e - Condensed score or piano-conductor score
+         g - Close score
+         h - Chorus score
+         i - Condensed score
+         j - Performer-conductor part
+         k - Vocal score
+         l - Score
+         m - Multiple score formats
+         n - Not applicable
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      21 - Music parts
+         # - No parts in hand or not specified
+         d - Instrumental and vocal parts
+         e - Instrumental parts
+         f - Vocal parts
+         n - Not applicable
+         u - Unknown
+         | - No attempt to code
+      21 - Existence of parts [OBSOLETE]
+         # - No parts exist
+         a - Parts exist
+         n - Not applicable
+         u - Unknown
+      22 - Target audience
+         # - Unknown or not specified
+         a - Preschool
+         b - Primary
+         c - Pre-adolescent
+         d - Adolescent
+         e - Adult
+         f - Specialized
+         g - General
+         j - Juvenile
+         | - No attempt to code
+      23 - Form of item
+         # - None of the following
+         a - Microfilm
+         b - Microfiche
+         c - Microopaque
+         d - Large print
+         f - Braille
+         g - Punched paper tape [   ]
+         h - Magnetic tape [OBSOLETE]
+         i - Multimedia [OBSOLETE]
+         o - Online
+         q - Direct electronic
+         r - Regular print reproduction
+         s - Electronic
+         x - Other form of reproduction [OBSOLETE]
+         z - Other form of reproduction [OBSOLETE]
+         | - No attempt to code
+      24-29 - Accompanying matter
+         # - No accompanying matter
+         a - Discography
+         b - Bibliography
+         c - Thematic index
+         d - Libretto or text
+         e - Biography of composer or author
+         f - Biography of performer or history of ensemble
+         g - Technical and/or historical information on instruments
+         h - Technical information on music
+         i - Historical information
+         j - Historical information other than music [OBSOLETE]
+         k - Ethnological information
+         n - Not applicable [OBSOLETE]
+         r - Instructional materials
+         s - Music
+         z - Other
+         | - No attempt to code
+      30-31 - Literary text for sound recordings
+         # - Item is a musical sound recording
+         a - Autobiography
+         b - Biography
+         c - Conference proceedings
+         d - Drama
+         e - Essays
+         f - Fiction
+         g - Reporting
+         h - History
+         i - Instruction
+         j - Language instruction
+         k - Comedy
+         l - Lectures, speeches
+         m - Memoirs
+         n - Not applicable
+         o - Folktales
+         p - Poetry
+         r - Rehearsals
+         s - Sounds
+         t - Interviews
+         z - Other
+         | - No attempt to code
+      32 - Main entry in body of entry [OBSOLETE]
+         0 - Main entry not in body of entry
+         1 - Main entry in body of entry
+         | - No attempt to code
+      32 - Undefined
+      33 - Transposition and arrangement
+         # - Not arrangement or transposition or not specified
+         a - Transposition
+         b - Arrangement
+         c - Both transposed and arranged
+         n - Not applicable
+         u - Unknown
+         | - No attempt to code 
+      34 - Undefined
+  008--CONTINUING RESOURCES
+    Character Positions
+      18 - Frequency
+         # - No determinable frequency
+         a - Annual
+         b - Bimonthly
+         c - Semiweekly
+         d - Daily
+         e - Biweekly
+         f - Semiannual
+         g - Biennial
+         h - Triennial
+         i - Three times a week
+         j - Three times a month
+         k - Continuously updated
+         m - Monthly
+         q - Quarterly
+         s - Semimonthly
+         t - Three times a year
+         u - Unknown
+         w - Weekly
+         z - Other
+         | - No attempt to code
+      19 - Regularity
+         n - Normalized irregular
+         r - Regular
+         u - Unknown
+         x - Completely irregular
+         | - No attempt to code
+      20 - ISSN center [OBSOLETE]
+         # - No ISSN center code assigned
+         0 - International Center
+         1 - United States
+         2 - United Kingdom
+         3 - Australia [OBSOLETE]
+         4 - Canada
+         5 - Moscow Regional Centre [OBSOLETE]
+         6 - Federal Republic of Germany [OBSOLETE]
+         7 - France [OBSOLETE]
+         8 - Argentina [OBSOLETE]
+         9 - Japan [OBSOLETE]
+         u - Unknown [OBSOLETE]
+         z - Other
+         | - No attempt to code
+      21 - Type of continuing resource
+         # - None of the following
+         d - Updating database
+         l - Updating loose-leaf
+         m - Monographic series
+         n - Newspaper
+         p - Periodical
+         w - Updating Web site
+         | - No attempt to code
+      22 - Form of original item
+         # - None of the following
+         a - Microfilm
+         b - Microfiche
+         c - Microopaque
+         d - Large print
+         e - Newspaper format
+         f - Braille
+         g - Punched paper tape [OBSOLETE]
+         h - Magnetic tape [OBSOLETE] 
+         i - Multimedia [OBSOLETE]
+         o - Online
+         q - Direct electronic
+         s - Electronic
+         x - Other physical medium [OBSOLETE]
+         z - Other physical medium [OBSOLETE]
+         | - No attempt to code
+      23 - Form of item
+         # - None of the following
+         a - Microfilm
+         b - Microfiche
+         c - Microopaque
+         d - Large print
+         f - Braille
+         g - Punched paper tape [OBSOLETE]
+         h - Magnetic tape [OBSOLETE]
+         i - Multimedia [OBSOLETE]
+         o - Online
+         q - Direct electronic
+         r - Regular print reproduction
+         s - Electronic
+         z - Other form of reproduction [OBSOLETE]
+         | - No attempt to code
+      24 - Nature of entire work
+         # - No specified nature of entire work
+         a - Abstracts/summaries
+         b - Bibliographies
+         c - Catalogs
+         d - Dictionaries
+         e - Encyclopedias
+         f - Handbooks
+         g - Legal articles
+         h - Biography
+         i - Indexes
+         k - Discographies
+         l - Legislation
+         m - Theses
+         n - Surveys of literature in a subject area
+         n - Legal cases and case notes [OBSOLETE]
+         o - Reviews
+         p - Programmed texts
+         q - Filmographies
+         r - Directories
+         s - Statistics
+         t - Technical reports
+         u - Standards/specifications
+         v - Legal cases and case notes
+         w - Law reports and digests
+         y - Yearbooks
+         z - Treaties
+         5 - Calendars
+         6 - Comics/graphic novels
+         | - No attempt to code
+      25-27 - Nature of contents
+         # - No specified nature of contents
+         a - Abstracts/summaries
+         b - Bibliographies
+         c - Catalogs
+         d - Dictionaries
+         e - Encyclopedias
+         f - Handbooks
+         g - Legal articles
+         h - Biography
+         i - Indexes
+         k - Discographies
+         l - Legislation
+         m - Theses
+         n - Surveys of literature in a subject area
+         n - Legal cases and case notes [OBSOLETE]
+         o - Reviews
+         p - Programmed texts
+         q - Filmographies
+         r - Directories
+         s - Statistics
+         t - Technical reports
+         u - Standards/specifications
+         v - Legal cases and case notes
+         w - Law reports and digests
+         y - Yearbooks
+         z - Treaties
+         5 - Calendars
+         6 - Comics/graphic novels
+         | - No attempt to code
+      28 - Government publication
+         # - Not a government publication
+         a - Autonomous or semi-autonomous component
+         c - Multilocal
+         f - Federal/national
+         i - International intergovernmental
+         l - Local
+         m - Multistate
+         n - Government publication--level undetermined [OBSOLETE]
+         o - Government publication--level undetermined
+         s - State, provincial, territorial, dependent,etc.
+         u - Unknown if item is government publication
+         z - Other
+         | - No attempt to code
+      29 - Conference publication
+         0 - Not a conference publication
+         1 - Conference publication
+         | - No attempt to code
+      30-32 - Undefined
+      30 - Title page availability [OBSOLETE]
+         # - No separate title page issued
+         a - In last issue of volume, loose
+         b - In last issue of volume, attached
+         c - In first issue of next volume, loose
+         d - In first issue of next volume, attached
+         e - Published separately, free upon request
+         f - Published separately, free, automatically sent
+         g - Published separately, purchase, request
+         u - Unknown
+         z - Other title page availability
+         | - No attempt to code
+      31 - Index availability [OBSOLETE]
+         # - No index published
+         a - Each issue contains index to its own contents (no volume index), loose
+         b - In last issue of volume, loose, separately paged
+         c - In last issue of volume, loose, unpaged
+         d - In last issue of volume, attached
+         e - In first issue of next volume, loose, separately paged
+         f - In first issue of next volume, loose, unpaged
+         g - In first issue of next volume, attached
+         h - Published separately, free, automatically sent
+         i - Published separately, free, upon request
+         j - Published separately, bound from publisher, free, automatically sent
+         k - Published separately, bound from publisher, free, upon request
+         l - Received separately, bound from publisher
+         m - Supplement or subseries, indexed in parent journal index
+         u - Unknown
+         z - Other index availability
+         | - No attempt to code
+      32 - Cumulative index availability [OBSOLETE]
+         0 - No cumulative index available
+         1 - Cumulative index available
+         u - Unknown
+         | - No attempt to code
+      33 - Original alphabet or script of title
+         # - No alphabet or script given/no key title
+         a - Basic roman
+         b - Extended roman
+         c - Cyrillic
+         d - Japanese
+         e - Chinese
+         f - Arabic
+         g - Greek
+         h - Hebrew
+         i - Thai
+         j - Devanagari
+         k - Korean
+         l - Tamil
+         u - Unknown
+         z - Other
+         | - No attempt to code
+      34 - Entry convention
+         0 - Successive entry
+         1 - Latest entry
+         2 - Integrated entry
+         | - No attempt to code
+  008--VISUAL MATERIALS
+    Character Positions
+      18-20 - Running time for motion pictures and videorecordings
+         000 - Running time exceeds three characters
+         001-999 - Running time
+         --- - Running time unknown
+         nnn - Not applicable
+         ||| - No attempt to code
+      21 - Undefined
+      21 - In LC collection [OBSOLETE]
+         # - Not in LC
+         a - In LC, print note
+         b - In LC, do not print note
+         u - Unknown
+      22 - Target audience
+         # - Unknown or not specified
+         a - Preschool
+         b - Primary
+         c - Pre-adolescent
+         d - Adolescent
+         e - Adult
+         f - Specialized
+         g - General
+         j - Juvenile
+         | - No attempt to code
+      23-27 - Undefined
+      23-27 - Accompanying matter [OBSOLETE]
+         # - No accompanying matter
+         0 - No [OBSOLETE]
+         1 - Yes [OBSOLETE]
+         l - Stills
+         m - Script material
+         o - Posters
+         p - Pressbooks
+         q - Lobby cards
+         r - Instructional materials
+         s - Music
+         z - Other
+         | - No attempt to code
+      28 - Government publication
+         # - Not a government publication
+         a - Autonomous or semi-autonomous component
+         c - Multilocal
+         f - Federal/national
+         i - International intergovernmental
+         l - Local
+         m - Multistate
+         n - Government publication--level undetermined [OBSOLETE]
+         o - Government publication--level undetermined
+         s - State, provincial, territorial, dependent, etc.
+         u - Unknown if item is government publication
+         z - Other
+         | - No attempt to code
+      29 - Form of item
+         # - None of the following
+         a - Microfilm
+         b - Microfiche
+         c - Microopaque
+         d - Large print
+         f - Braille
+         o - Online
+         q - Direct electronic
+         r - Regular print reproduction
+         s - Electronic
+         | - No attempt to code
+      30-32 - Undefined
+      32 - Main entry in body of entry [OBSOLETE]
+         0 - Main entry not in body of entry
+         1 - Main entry in body of entry
+         | - No attempt to code
+      33 - Type of visual material
+         a - Art original
+         b - Kit
+         c - Art reproduction
+         d - Diorama
+         e - Electronic videorecording [OBSOLETE]
+         f - Filmstrip
+         g - Game
+         i - Picture
+         k - Graphic
+         l - Technical drawing
+         m - Motion picture
+         n - Chart
+         o - Flash card
+         p - Microscope slide
+         q - Model
+         r - Realia
+         s - Slide
+         t - Transparency
+         v - Videorecording
+         w - Toy
+         z - Other
+         | - No attempt to code
+      34 - Technique
+         # - Not applicable [OBSOLETE]
+         a - Animation
+         c - Animation and live action
+         l - Live action
+         n - Not applicable
+         u - Unknown
+         z - Other technique
+         | - No attempt to code
+  008--MIXED MATERIALS
+    Character Positions
+      18-22 - Undefined
+      23 - Form of item
+         # - None of the following
+         a - Microfilm
+         b - Microfiche
+         c - Microopaque
+         d - Large print
+         f - Braille
+         g - Punched paper tape [OBSOLETE]
+         h - Magnetic tape [OBSOLETE]
+         i - Multimedia [OBSOLETE]
+         j - Handwritten transcript [OBSOLETE]
+         o - Online
+         p - Photocopy [OBSOLETE]
+         q - Direct electronic
+         r - Regular print reproduction
+         s - Electronic
+         t - Typewritten transcript [OBSOLETE]
+         z - Other form of reproduction [OBSOLETE]
+         | - No attempt to code
+      24-34 - Undefined
+      30 - Case file indicator [OBSOLETE]
+         # - No case file exists
+         c - Case file exists
+      32 - Processing status code [OBSOLETE]
+         a - Collection not in library
+         b - Completely processed
+         c - Processed but with unprocessed additions
+         d - Requires processing
+         e - Totally unprocessed
+         f - Under total cloture
+         u - Unknown
+      33 - Collection status code [OBSOLETE]
+         a - Discrete grouping of material
+         b - Accession
+         c - Active solicitation
+         d - Solicitation unsuccessful
+         e - Information file only
+         u - Unknown
+      34 - Level of collection control code [OBSOLETE]
+         a - Control on collection level
+         b - Control by series
+         c - Control by container
+         d - Control by folder
+         e - Control by item
+         u - Unknown
+
+009 - PHYSICAL DESCRIPTION FIXED-FIELD FOR ARCHIVAL COLLECTION (VM) - [OBSOLETE]
+    Character Positions
+      00 - Genealogical stage
+      01 - Technical stage
+      02 - Color stage
+      03 - Film emulsion
+      04 - Film base
+      05 - Negative or positive sound
+      06 - Additional types of color
+      07 - Longitudinal shrinkage
+      08 - Perforation shrinkage
+      09 - Film deterioration
+      10 - Completeness
+      11-14 - Film inspection date
+
