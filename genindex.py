@@ -1,5 +1,9 @@
 # (C) 2014 James Stephenson
 
+#This file gererates an index from a list of MARC data
+#provided by The Library of Congress.  If that list is
+#modified, the index has to be regenerated.
+
 with open('MARC21bibfieldlist.txt', 'rt') as infile:
     marcdata = infile.read()
 
