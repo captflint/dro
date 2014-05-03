@@ -1,3 +1,5 @@
+# (C) 2014 James Stephenson
+
 with open('MARC21bibfieldlist.txt', 'rt') as infile:
     marcdata = infile.read()
 
@@ -9,6 +11,18 @@ def stringify(tag):
     else:
         return(str(tag))
 
-testlist = [0, 1, 9, 10, 99, 100, 999]
-for item in testlist:
-    print(item, '\t', stringify(item))
+index = {}
+tag = 0
+while tag < 1000:
+    current = 0
+    search = stringify(tag) + ' - '
+    print("Searching for", search[:3])
+    while marcdata[current:current + 6] != search and marcdata[current:current + 10] != '!!!!!!!!!!':
+        current = current + 1
+    if marcdata[current:current + 6] == search:
+        print(search[:3], 'is at', current)
+        index[search[:3]] = current
+    else:
+        print(search[:3], 'not found')
+    tag = tag + 1
+print(index)
