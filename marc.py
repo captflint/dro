@@ -38,3 +38,22 @@ def parsesf(field):
         else:
             current = current + 1
     return(subfields)
+
+class MARCrecord:
+    raw_marc21 = "This is a string containing the raw MARC data"
+
+#The tag dict contains marc tags as keys and field strings as values
+    tag_dict = {}
+
+    def build_tag_dict(self):
+        baseaddr = int(self.raw_marc21[12:17])
+        fields = []
+        current = 24
+        while self.raw_marc21[current] != "":
+            tag = self.raw_marc21[current:current + 3]
+            length = int(self.raw_marc21[current + 3:current + 7])
+            start = int(self.raw_marc21[current + 7:current + 12])
+            entry = self.raw_marc21[baseaddr + start:baseaddr + start + length]
+            self.tag_dict[tag] = entry
+            current = current + 12
+

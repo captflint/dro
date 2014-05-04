@@ -1,17 +1,13 @@
 # (C) 2014 James Stephenson
 
-from marc import readmarc, parsesf
+from marc import readmarc, parsesf, MARCrecord
 from taglookup import gettag, getsubtag
+
+testrecord = MARCrecord()
+
 marcfile = input('Name of file: ')
 with open(marcfile, 'rt') as infile:
-    marcfile = infile.read()
+    testrecord.raw_marc21 = infile.read()
 
-for field in readmarc(marcfile):
-    print(gettag(field[0]))
-    if '' in field[1]:
-        for sub in parsesf(field[1]):
-            print('\t', getsubtag(field[0], sub[0]))
-            print('\t\t', sub[1])
-    else:
-        print('\t', field[1][:-1])
-    print('\n')
+testrecord.build_tag_dict()
+print(testrecord.tag_dict)
