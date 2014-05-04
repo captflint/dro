@@ -10,13 +10,6 @@ with open(marcfile, 'rt') as infile:
     testrecord.raw_marc21 = infile.read()
 
 testrecord.parse_marc21()
-for item in testrecord.record:
-    print(item[0])
-    if type(item[1]) is list:
-        for x in item[1]:
-            print(x)
-    else:
-        print(item[1])
+testrecord.display()
 
-print(testrecord.record)
 

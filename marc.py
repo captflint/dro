@@ -1,5 +1,5 @@
 # (C) 2014 James Stephenson
-
+from taglookup import getsubtag, gettag
 
 class MARCrecord:
     raw_marc21 = "This is a string containing the raw MARC data"
@@ -42,3 +42,16 @@ class MARCrecord:
                 for item in choplist:
                     fielddata.append([item[0], item[1:]])
                 self.record[x][1] = fielddata
+
+    def display(self):
+        for item in self.record:
+            print(gettag(item[0]))
+            if type(item[1]) is str:
+                print('\t', item[1], '\n')
+            else:
+                for sub in item[1]:
+                    if type(sub) is str:
+                        print(sub)
+                    else:
+                        print('\t', getsubtag(item[0], sub[0]))
+                        print('\t\t', sub[1], '\n')
