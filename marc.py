@@ -11,25 +11,25 @@ class MARCrecord:
 # and proceses it so it can be manipulated by the program
     def parse_marc21(self):
 # First we get the raw data and add some padding
-        self.raw_marc21 = self.raw_marc21 + '!!!!!!!!!!!!!!!'
+        rawmarc = self.raw_marc21 + 100 * '!'
 # The first step in the process is to parse the directory
-        baseaddr = int(self.raw_marc21[12:17])
+        baseaddr = int(rawmarc[12:17])
         current = 24
         offset = 0
         newoffset = False
         lastoffset = 0
-        while self.raw_marc21[current] != "":
-            tag = self.raw_marc21[current:current + 3]
-            length = int(self.raw_marc21[current + 3:current + 7])
-            start = int(self.raw_marc21[current + 7:current + 12])
+        while rawmarc[current] != "":
+            tag = rawmarc[current:current + 3]
+            length = int(rawmarc[current + 3:current + 7])
+            start = int(rawmarc[current + 7:current + 12])
 # The following statements check for currupted directory
 # data and try to compensate
-            if self.raw_marc21[baseaddr + start + length + offset - 1] != '':
+            if rawmarc[baseaddr + start + length + offset - 1] != '':
                 lastoffset = offset
                 offset = 0
                 oldoffset = 0
                 newoffset = True
-                while self.raw_marc21[baseaddr + start + length + offset - 1] != '':
+                while rawmarc[baseaddr + start + length + offset - 1] != '':
                     if offset == oldoffset * -1:
                         oldoffset = offset
                         if offset < 0:
@@ -41,9 +41,9 @@ class MARCrecord:
 
             #print('offset is', offset) # used for debugging
             if newoffset is False:
-                entry = self.raw_marc21[baseaddr + start + offset:baseaddr + start + length + offset]
+                entry = rawmarc[baseaddr + start + offset:baseaddr + start + length + offset]
             else:
-                entry = self.raw_marc21[baseaddr + start + lastoffset:baseaddr + start + length + offset]
+                entry = rawmarc[baseaddr + start + lastoffset:baseaddr + start + length + offset]
                 newoffset = False
             #print(tag, entry[-1]) #used for debugging
             self.record.append([tag, entry])
