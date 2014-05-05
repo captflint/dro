@@ -4,22 +4,28 @@ from taglookup import getsubtag, gettag
 class MARCrecord:
     raw_marc21 = "This is a string containing the raw MARC data"
 
-#The tag dict contains marc tags as keys and field strings as values
+# record is a list of many sublists with tags and data
     record = []
 
+# parse_marc21 takes a raw MARC 21 file encoded in utf8
+# and proceses it so it can be manipulated by the program
     def parse_marc21(self):
+# First we get the raw data and add some padding
         self.raw_marc21 = self.raw_marc21 + '!!!!!!!!!!!!!!!'
+# The first step in the process is to parse the directory
         baseaddr = int(self.raw_marc21[12:17])
         current = 24
         offset = 0
         newoffset = False
-        olderoffset = 0
+        lastoffset = 0
         while self.raw_marc21[current] != "":
             tag = self.raw_marc21[current:current + 3]
             length = int(self.raw_marc21[current + 3:current + 7])
             start = int(self.raw_marc21[current + 7:current + 12])
+# The following statements check for currupted directory
+# data and try to compensate
             if self.raw_marc21[baseaddr + start + length + offset - 1] != '':
-                olderoffset = offset
+                lastoffset = offset
                 offset = 0
                 oldoffset = 0
                 newoffset = True
@@ -32,28 +38,51 @@ class MARCrecord:
                     else:
                         oldoffset = offset
                         offset = offset * -1
-            print('offset is', offset)
+
+            #print('offset is', offset) # used for debugging
             if newoffset is False:
                 entry = self.raw_marc21[baseaddr + start + offset:baseaddr + start + length + offset]
             else:
-                entry = self.raw_marc21[baseaddr + start + olderoffset:baseaddr + start + length + offset]
+                entry = self.raw_marc21[baseaddr + start + lastoffset:baseaddr + start + length + offset]
                 newoffset = False
-            print(tag, entry)
+            #print(tag, entry[-1]) #used for debugging
             self.record.append([tag, entry])
             current = current + 12
+
+# At this point the directory has been parsed and the
+# tags and data have been stored is a list of lists.
+# ==== List data structure ====
+# 1st Level:
+# Each item is a list with two items. The first item
+# is the field tag. The 2nd is the field data. Fields
+# with no subfields stay on this level.
+# 2nd Level:
+# The data from level 1 gets turned from a string into
+# a list. The first item are the indicators. The next
+# items are 3rd level sublists.
+# 3rd level:
+# Each 3rd level sublist has two items. The 1st is
+# the subfield tag. The 2nd is the subfield data
         for x in range(0, len(self.record)):
+# Check to see if the data field has subfields, if not
+# knock off the final character which we don't need.
             if '' not in self.record[x][1]:
                 self.record[x][1] = self.record[x][1][:-1]
             else:
                 fieldstring = self.record[x][1][:-1]
                 fielddata = []
+# Check for valid indicators and add them to the list
                 if '' in fieldstring[:2]:
                     fielddata.append('invalid indicators')
                 else:
                     fielddata.append(fieldstring[:2])
+# Skip to the beginning of the first subfield
                 while fieldstring[0] != '':
                     fieldstring = fieldstring[1:]
                 fieldstring = fieldstring[1:]
+
+# Now we chop the field data string into separate
+# subfield strings
                 choplist = []
                 chopstr = ''
                 for char in fieldstring:
@@ -63,6 +92,9 @@ class MARCrecord:
                         choplist.append(chopstr)
                         chopstr = ''
                 choplist.append(chopstr)
+
+# separate each subtag from its subdata, put it
+# in a list and add everything to the record.
                 for item in choplist:
                     fielddata.append([item[0], item[1:]])
                 self.record[x][1] = fielddata
