@@ -2,10 +2,10 @@
 from taglookup import getsubtag, gettag
 
 class MARCrecord:
-    raw_marc21 = 'Raw MARC21 data goes here'
+    self.raw_marc21 = 'Raw MARC21 data goes here'
 
 # record is a list of many sublists with tags and data
-    record = []
+    self.record = []
 
 # parse_marc21 takes a raw MARC 21 file encoded in utf8
 # and proceses it so it can be manipulated by the program
