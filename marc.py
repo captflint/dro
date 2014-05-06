@@ -33,11 +33,11 @@ class MARCrecord:
                     if offset == oldoffset * -1:
                         oldoffset = offset
                         if offset < 0:
-                            offset = offset * -1
-                        offset = offset + 1
+                            offset *= -1
+                        offset += 1
                     else:
                         oldoffset = offset
-                        offset = offset * -1
+                        offset *= -1
 
             #print('offset is', offset) # used for debugging
             if newoffset is False:
@@ -47,7 +47,7 @@ class MARCrecord:
                 newoffset = False
             #print(tag, entry[-1]) #used for debugging
             self.record.append([tag, entry])
-            current = current + 12
+            current += 12
 
 # At this point the directory has been parsed and the
 # tags and data have been stored is a list of lists.
