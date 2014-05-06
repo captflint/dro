@@ -2,7 +2,7 @@
 from taglookup import getsubtag, gettag
 
 class MARCrecord:
-    raw_marc21 = "This is a string containing the raw MARC data"
+    raw_marc21 = 'Raw MARC21 data goes here'
 
 # record is a list of many sublists with tags and data
     record = []
@@ -111,3 +111,4 @@ class MARCrecord:
                     else:
                         print('\t', getsubtag(item[0], sub[0]))
                         print('\t\t', sub[1], '\n')
+
