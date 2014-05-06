@@ -7,32 +7,14 @@ from preprocessmarc import separate
 with open(sys.argv[1], 'rt') as infile:
     marcfile = separate(infile.read())
 
-one = MARCrecord()
-two = MARCrecord()
-three = MARCrecord()
-four = MARCrecord()
-five = MARCrecord()
+objectlist = []
+for item in marcfile:
+    x = MARCrecord()
+    x.raw_marc21 = item
+    objectlist.append(x)
+    x = "I'm not an object anymore"
 
-one.raw_marc21 = marcfile[0]
-two.raw_marc21 = marcfile[1]
-three.raw_marc21 = marcfile[2]
-four.raw_marc21 = marcfile[3]
-five.raw_marc21 = marcfile[4]
-
-one.parse_marc21()
-two.parse_marc21()
-three.parse_marc21()
-four.parse_marc21()
-five.parse_marc21()
-
-print('\n NEWNEWNEW \n')
-print(one.record)
-print('\n NEWNEWNEW \n')
-print(two.record)
-print('\n NEWNEWNEW \n')
-print(three.record)
-print('\n NEWNEWNEW \n')
-print(four.record)
-print('\n NEWNEWNEW \n')
-print(five.record)
-
+for obj in objectlist:
+    obj.parse_marc21()
+    print('\n NEWNEWNEW \n')
+    obj.display()
