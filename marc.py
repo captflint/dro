@@ -12,42 +12,16 @@ class MARCrecord:
 # and proceses it so it can be manipulated by the program
     def parse_marc21(self):
 # First we get the raw data and add some padding
-        rawmarc = self.raw_marc21 + 100 * '!'
+        rawmarc = bytes(self.raw_marc21, 'utf-8')
 # The first step in the process is to parse the directory
         baseaddr = int(rawmarc[12:17])
         current = 24
-        offset = 0
-        newoffset = False
-        lastoffset = 0
-        while rawmarc[current] != "":
+        while chr(rawmarc[current]) != "":
             tag = rawmarc[current:current + 3]
             length = int(rawmarc[current + 3:current + 7])
             start = int(rawmarc[current + 7:current + 12])
-# The following statements check for currupted directory
-# data and try to compensate
-            if rawmarc[baseaddr + start + length + offset - 1] != '':
-                lastoffset = offset
-                offset = 0
-                oldoffset = 0
-                newoffset = True
-                while rawmarc[baseaddr + start + length + offset - 1] != '':
-                    if offset == oldoffset * -1:
-                        oldoffset = offset
-                        if offset < 0:
-                            offset *= -1
-                        offset += 1
-                    else:
-                        oldoffset = offset
-                        offset *= -1
-
-            #print('offset is', offset) # used for debugging
-            if newoffset is False:
-                entry = rawmarc[baseaddr + start + offset:baseaddr + start + length + offset]
-            else:
-                entry = rawmarc[baseaddr + start + lastoffset:baseaddr + start + length + offset]
-                newoffset = False
-            #print(tag, entry[-1]) #used for debugging
-            self.record.append([tag, entry])
+            entry = rawmarc[baseaddr + start:baseaddr + start + length]
+            self.record.append([bytes.decode(tag), bytes.decode(entry)])
             current += 12
 
 # At this point the directory has been parsed and the

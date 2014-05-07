@@ -8,5 +8,5 @@ dro TODO list
 ** TODO write function to edit MARC files
 * TODO Implement support for MARCXML bibliographic
 * TODO Implement support for Z39.50
-* TODO Bugs [0/1]
-** TODO Resolve issue with non-ascii utf-8 characters
+* DONE Bugs [1/1]
+** DONE Resolve issue with non-ascii utf-8 characters
