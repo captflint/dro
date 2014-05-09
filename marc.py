@@ -7,14 +7,16 @@ class MARCrecord:
 
 # record is a list of many sublists with tags and data
         self.record = []
-
+        self.leader = Leader()
+        
 # parse_marc21 takes a raw MARC 21 file encoded in utf8
 # and proceses it so it can be manipulated by the program
     def parse_marc21(self):
 # First we get the raw data and add some padding
         rawmarc = bytes(self.raw_marc21, 'utf-8')
 # The first step in the process is to parse the directory
-        baseaddr = int(rawmarc[12:17])
+        self.leader.parse(rawmarc[:24])
+        baseaddr = int(self.leader.base_addr)
         current = 24
         while chr(rawmarc[current]) != "":
             tag = rawmarc[current:current + 3]
@@ -75,6 +77,8 @@ class MARCrecord:
                 self.record[x][1] = fielddata
 
     def display(self):
+        print("Leader")
+        print(self.leader.whole_leader, '\n')
         for item in self.record:
             print(gettag(item[0]))
             if type(item[1]) is str:
@@ -87,3 +91,37 @@ class MARCrecord:
                         print('\t', getsubtag(item[0], sub[0]))
                         print('\t\t', sub[1], '\n')
 
+class Leader():
+    def __init__(self):
+        self.whole_leader = "The whole leader goes here"
+        self.record_length = "Marc record length goes here"
+        self.record_status = "Marc record status goes here"
+        self.record_type = "Type of record goes here"
+        self.bib_level = "Bibliographic level goes here"
+        self.control_type = "Type of control goes here"
+        self.encoding = "Character encoding scheme goes here"
+        self.indicator_count = 2 #This value never changes
+        self.sub_code_count = 2 #This value never changes
+        self.base_addr = "Base address of data goes here"
+        self.encoding_level = "Encoding level goes here"
+        self.descriptive_cataloging = "Descriptive cataloging form goes here"
+        self.multipart_record_level = "Multipart Resourse Record Level goes here"
+        self.length_of_length = 4 #This value never changes
+        self.length_of_start = 5 #This value never changes
+        self.length_of_implementation = 0 #This value never changes
+        self.undefined = 0 #This value never changes
+
+    def parse(self, raw_leader):
+        if type(raw_leader) != str:
+            raw_leader = bytes.decode(raw_leader)
+        self.whole_leader = raw_leader
+        self.record_length = raw_leader[0:5]
+        self.record_status = raw_leader[5]
+        self.record_type = raw_leader[6]
+        self.bib_level = raw_leader[7]
+        self.control_type = raw_leader[8]
+        self.encoding = raw_leader[9]
+        self.base_addr = raw_leader[12:17]
+        self.encoding_level = raw_leader[17]
+        self.descriptive_cataloging = raw_leader[18]
+        self.multipart_record_level = raw_leader[19]
