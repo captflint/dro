@@ -8,5 +8,6 @@ dro TODO list
 ** TODO write function to edit MARC files
 * TODO Implement support for MARCXML bibliographic
 * TODO Implement support for Z39.50
+* TODO Implement for the evolving BIBFRAME standard
 * DONE Bugs [1/1]
 ** DONE Resolve issue with non-ascii utf-8 characters
