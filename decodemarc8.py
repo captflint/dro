@@ -80,6 +80,8 @@ def utfcodelookup(byte):
     else:
         charset = G1
     utfchar = charset[hex(ord(byte))[2:].upper]
+    if utfchar == None:
+        return(returnval)
     while len(utfchar) > 2:
         twochars = int('0x' + utfchar[0:2], base = 16)
         returnval += bytes([twochars])
