@@ -7,22 +7,21 @@ charsetcodes = {'3': Basicarabic, '4': Extendedarabic, 'B': Ascii, '!E': Ansel, 
 
 G0 = Ascii
 G1 = Ansel
-
+utfstring = bytes('', 'utf-8')
 
 def convertmarc8(marcbytes):
-    utfstring = bytes('')
+    global utfstring
     while len(marcbytes) > 0:
         if bite == bytes.(0x1b):
-            changecharset(marcbytes)
+            marcbytes = changecharset(marcbytes)
         else:
             if GO == Ascii and ord(bite) <= 127:
                 utfstring += bite
                 marcbytes = marcbytes[1:]
-            elif ord(bite) <= 127:
-                utfstring += utfcodelookup(G0, bite)
-                marcbytes = marcbytes[1:]
+            elif: G0 == Asiadict:
+                marcbytes = asiadecode(marcbytes)
             else:
-                utfstring += utfcodelookup(G1, bite)
+                utfstring += utfcodelookup(bite)
                 marcbytes = marcbytes[1:]
     return(cleanup(utfstring))
 
@@ -75,3 +74,18 @@ def changecharset(truncatedbytes):
 def utfcodelookup(byte):
 #This will lookup the the utf8 code from the
 #relevant dictionary and return those bytes
+    returnval = bytes('', 'utf-8')
+    if ord(byte) <= 127:
+        charset = G0
+    else:
+        charset = G1
+    utfchar = charset[hex(ord(byte))[2:].upper]
+    while len(utfchar) > 2:
+        twochars = int('0x' + utfchar[0:2], base = 16)
+        returnval += bytes([twochars])
+        utfchar = utfchar[2:]
+    return(returnval)
+
+def asiadecode(asiabytes):
+#This function will decode multibyte asian characters
+global utfstring
