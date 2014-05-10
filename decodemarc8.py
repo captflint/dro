@@ -33,6 +33,44 @@ def cleanup(string):
 def changecharset(truncatedbytes):
 #This will change the character set and return
 #the bites minus the escape sequence
+    global G0
+    global G1
+    truncatedbytes = truncatedbytes[1:]
+    if truncatedbytes[0] == bytes([0x67]):
+        G0 = Greeksymbols
+        return(truncatedbytes[1:])
+    elif truncatedbytes[0] == bytes([0x62]):
+        G0 = Subscripts
+        return(truncatedbytes[1:])
+    elif truncatedbytes[0] == bytes([0x70]):
+        G0 = Superscripts
+        return(truncatedbytes[1:])
+    elif truncatedbytes[0] == bytes([0x73]):
+        G0 = Ascii
+        return(truncatedbytes[1:])
+    elif truncatedbytes[0] == bytes([0x28]) or truncatedbytes[0] == bytes([0x2c]):
+        truncatedbytes = truncatedbytes[1:]
+        G0 = charsetcodes[bytes.decode(truncatedbytes[0])]
+        return(truncatedbytes[1:])
+    elif truncatedbytes[0] == bytes([0x24]):
+        G0 = Asiadict
+        truncatedbytes = truncatedbytes[1:]
+        if truncatedbytes[0] == bytes([0x2c]):
+            truncatedbytes = truncatedbytes[2:]
+            return(truncatedbytes)
+        else:
+            truncatedbytes = truncatedbytes[1:]
+            return(truncatedbytes)
+    elif truncatedbytes[0] == bytes([0x29]) or truncatedbytes[0] == bytes([0x2d]):
+        truncatedbytes = truncatedbytes[1:]
+        if truncatedbytes[0] == bytes([!]):
+            G1 = Ansel
+            return(truncatedbytes[2:])
+        else:
+            G1 = charsetcodes[bytes.decode(truncatedbytes[0])]
+            return(truncatedbytes[1:])
+    else:
+        print('Error: Unknown escape sequence')
 
 def utfcodelookup(byte):
 #This will lookup the the utf8 code from the
