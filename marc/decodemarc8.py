@@ -3,7 +3,7 @@
 from MARC8dicts import Ascii, Ansel, Greeksymbols, Subscripts, Superscripts, Basichebrew, Basiccyrillic, Extendedcyrillic, Basicarabic, Extendedarabic, Basicgreek, Asiadict
 
 # Define some character set properties
-charsetcodes = {'3': Basicarabic, '4': Extendedarabic, 'B': Ascii, '!E': Ansel, '1': Asiadicts, 'N': Basiccyrillic, 'Q': Extendedcyrillic, 'S': Basicgreek, '2': Basichebrew}
+charsetcodes = {'3': Basicarabic, '4': Extendedarabic, 'B': Ascii, '!E': Ansel, '1': Asiadict, 'N': Basiccyrillic, 'Q': Extendedcyrillic, 'S': Basicgreek, '2': Basichebrew}
 
 combiningchars = "ְֱֲֳִֵֶַָֹֻּֿׁﬞًٌٍَُِّْ̧̨̣̤̥̳̲̦̜̮̉̀́̂̃̄̆̇̈̌̊̋̐̓̆̌̀́̈͂̓̔̕͡͠ͅ"
 
@@ -11,19 +11,23 @@ G0 = Ascii
 G1 = Ansel
 utfstring = bytes('', 'utf-8')
 
+
+
 def convertmarc8(marcbytes):
     global utfstring
+    utfstring = bytes('', 'utf-8')
     while len(marcbytes) > 0:
-        if bite == bytes([0x1b]):
+        if marcbytes[0] == int('0x1b', base = 16):
             marcbytes = changecharset(marcbytes)
+            print('changing charset')
         else:
-            if GO == Ascii and ord(bite) <= 127:
-                utfstring += bite
+            if G0 == Ascii and marcbytes[0] <= 127:
+                utfstring += bytes([marcbytes[0]])
                 marcbytes = marcbytes[1:]
-            elif: G0 == Asiadict:
+            elif G0 == Asiadict:
                 marcbytes = asiadecode(marcbytes)
             else:
-                utfstring += utfcodelookup(bite)
+                utfstring += utfcodelookup(marcbytes[0])
                 marcbytes = marcbytes[1:]
     return(cleanup(utfstring))
 
@@ -42,7 +46,7 @@ def cleanup(string):
                 combining = ''
         else:
             combining += string[0]
-            sting = sting[1:]
+            string = string[1:]
     return(returnstring)
 
 def changecharset(truncatedbytes):
@@ -78,7 +82,7 @@ def changecharset(truncatedbytes):
             return(truncatedbytes)
     elif truncatedbytes[0] == bytes([0x29]) or truncatedbytes[0] == bytes([0x2d]):
         truncatedbytes = truncatedbytes[1:]
-        if truncatedbytes[0] == bytes([!]):
+        if truncatedbytes[0] == bytes([ord('!')]):
             G1 = Ansel
             return(truncatedbytes[2:])
         else:
@@ -91,11 +95,11 @@ def utfcodelookup(byte):
 #This will lookup the the utf8 code from the
 #relevant dictionary and return those bytes
     returnval = bytes('', 'utf-8')
-    if ord(byte) <= 127:
+    if byte <= 127:
         charset = G0
     else:
         charset = G1
-    utfchar = charset[hex(ord(byte))[2:].upper]
+    utfchar = charset[hex(byte)[2:].upper()]
     if utfchar == None:
         return(returnval)
     while len(utfchar) > 0:

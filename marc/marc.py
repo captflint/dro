@@ -1,5 +1,6 @@
 # (C) 2014 James Stephenson
 from taglookup import getsubtag, gettag
+from decodemarc8 import convertmarc8
 
 class MARCrecord:
     def __init__(self):
@@ -8,14 +9,22 @@ class MARCrecord:
 # record is a list of many sublists with tags and data
         self.record = []
         self.leader = Leader()
+        self.ismarc8 = False
+
+    def unicodec(self, bites):
+        if self.ismarc8:
+            return(convertmarc8(bites))
+        else:
+            return(bytes.decode(bites, 'utf-8'))
         
 # parse_marc21 takes a raw MARC 21 file encoded in utf8
 # and proceses it so it can be manipulated by the program
     def parse_marc21(self):
-# First we get the raw data and add some padding
-        rawmarc = bytes(self.raw_marc21, 'utf-8')
 # The first step in the process is to parse the directory
+        rawmarc = self.raw_marc21
         self.leader.parse(rawmarc[:24])
+        if self.leader.encoding != 'a':
+            self.ismarc8 = True
         baseaddr = int(self.leader.base_addr)
         current = 24
         while chr(rawmarc[current]) != "":
@@ -23,7 +32,7 @@ class MARCrecord:
             length = int(rawmarc[current + 3:current + 7])
             start = int(rawmarc[current + 7:current + 12])
             entry = rawmarc[baseaddr + start:baseaddr + start + length]
-            self.record.append([bytes.decode(tag), bytes.decode(entry)])
+            self.record.append([bytes.decode(tag), self.unicodec(entry)])
             current += 12
 
 # At this point the directory has been parsed and the
