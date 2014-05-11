@@ -29,6 +29,7 @@ def convertmarc8(marcbytes):
             else:
                 utfstring += utfcodelookup(marcbytes[0])
                 marcbytes = marcbytes[1:]
+                print(bytes.decode(utfstring))
     return(cleanup(utfstring))
 
 def cleanup(string):
@@ -55,34 +56,34 @@ def changecharset(truncatedbytes):
     global G0
     global G1
     truncatedbytes = truncatedbytes[1:]
-    if truncatedbytes[0] == bytes([0x67]):
+    if truncatedbytes[0] == int('0x67', base = 16):
         G0 = Greeksymbols
         return(truncatedbytes[1:])
-    elif truncatedbytes[0] == bytes([0x62]):
+    elif truncatedbytes[0] == int('0x62', base = 16):
         G0 = Subscripts
         return(truncatedbytes[1:])
-    elif truncatedbytes[0] == bytes([0x70]):
+    elif truncatedbytes[0] == int('0x70', base = 16):
         G0 = Superscripts
         return(truncatedbytes[1:])
-    elif truncatedbytes[0] == bytes([0x73]):
+    elif truncatedbytes[0] == int('0x73', base = 16):
         G0 = Ascii
         return(truncatedbytes[1:])
-    elif truncatedbytes[0] == bytes([0x28]) or truncatedbytes[0] == bytes([0x2c]):
+    elif truncatedbytes[0] == int('0x28', base = 16) or truncatedbytes[0] == int('0x2c', base = 16):
         truncatedbytes = truncatedbytes[1:]
-        G0 = charsetcodes[bytes.decode(truncatedbytes[0])]
+        G0 = charsetcodes[chr(truncatedbytes[0])]
         return(truncatedbytes[1:])
-    elif truncatedbytes[0] == bytes([0x24]):
+    elif truncatedbytes[0] == int('0x24', base = 16):
         G0 = Asiadict
         truncatedbytes = truncatedbytes[1:]
-        if truncatedbytes[0] == bytes([0x2c]):
+        if truncatedbytes[0] == int('0x2c', base = 16):
             truncatedbytes = truncatedbytes[2:]
             return(truncatedbytes)
         else:
             truncatedbytes = truncatedbytes[1:]
             return(truncatedbytes)
-    elif truncatedbytes[0] == bytes([0x29]) or truncatedbytes[0] == bytes([0x2d]):
+    elif truncatedbytes[0] == int('0x29', base = 16) or truncatedbytes[0] == int('0x2d', base = 16):
         truncatedbytes = truncatedbytes[1:]
-        if truncatedbytes[0] == bytes([ord('!')]):
+        if truncatedbytes[0] == ord('!'):
             G1 = Ansel
             return(truncatedbytes[2:])
         else:
