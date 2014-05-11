@@ -12,7 +12,7 @@ utfstring = bytes('', 'utf-8')
 def convertmarc8(marcbytes):
     global utfstring
     while len(marcbytes) > 0:
-        if bite == bytes.(0x1b):
+        if bite == bytes([0x1b]):
             marcbytes = changecharset(marcbytes)
         else:
             if GO == Ascii and ord(bite) <= 127:
@@ -90,4 +90,20 @@ def utfcodelookup(byte):
 
 def asiadecode(asiabytes):
 #This function will decode multibyte asian characters
-global utfstring
+    global utfstring
+    utfbytes = bytes('', 'utf-8')
+    while ord(asiabytes[0]) != 0x1b:
+        utfchar = hex(asiabytes[0])[2:] + hex(asiabytes[1])[2:] + hex(asiabytes[2])[2:]
+        utfchar = asiadict[utfchar.upper()]
+        if utfchar == None:
+            utfbytes = bytes('', 'utf-8')
+            asiabytes = asiabytes[3:]
+        else:
+            while len(utfchar) > 2:
+                twochars = int('Ox' + utfchar[0:2], base = 16)
+                utfbytes += bytes([twochars])
+                utfchar = utfchar[2:]
+            utfstring += utfbytes
+            utfbytes = bytes('', 'utf-8')
+            asiabytes = asiabytes[3:]
+    return(asiabytes)
