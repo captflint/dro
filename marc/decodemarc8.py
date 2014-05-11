@@ -5,6 +5,8 @@ from MARC8dicts import Ascii, Ansel, Greeksymbols, Subscripts, Superscripts, Bas
 # Define some character set properties
 charsetcodes = {'3': Basicarabic, '4': Extendedarabic, 'B': Ascii, '!E': Ansel, '1': Asiadicts, 'N': Basiccyrillic, 'Q': Extendedcyrillic, 'S': Basicgreek, '2': Basichebrew}
 
+combiningchars = "ְֱֲֳִֵֶַָֹֻּֿׁﬞًٌٍَُِّْ̧̨̣̤̥̳̲̦̜̮̉̀́̂̃̄̆̇̈̌̊̋̐̓̆̌̀́̈͂̓̔̕͡͠ͅ"
+
 G0 = Ascii
 G1 = Ansel
 utfstring = bytes('', 'utf-8')
@@ -28,6 +30,8 @@ def convertmarc8(marcbytes):
 def cleanup(string):
 #This function will put combining characters in the
 #correct positions and return a utf-8 string
+    string = bytes.decode(string, 'utf-8')
+
 
 def changecharset(truncatedbytes):
 #This will change the character set and return
