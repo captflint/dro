@@ -1,6 +1,6 @@
 # (C) 2014 - James Stephenson
 
-from MARC8dicts import Ascii, Ansel, Greeksymbols, Subscripts, Superscripts, Basichebrew, Basiccyrillic, Extendedcyrillic, Basicarabic, Extendedarabic, Basicgreek, Asiadict, combinginglist
+from MARC8dicts import Ascii, Ansel, Greeksymbols, Subscripts, Superscripts, Basichebrew, Basiccyrillic, Extendedcyrillic, Basicarabic, Extendedarabic, Basicgreek, Asiadict
 
 # Define some character set properties
 charsetcodes = {'3': Basicarabic, '4': Extendedarabic, 'B': Ascii, '!E': Ansel, '1': Asiadicts, 'N': Basiccyrillic, 'Q': Extendedcyrillic, 'S': Basicgreek, '2': Basichebrew}
@@ -31,7 +31,19 @@ def cleanup(string):
 #This function will put combining characters in the
 #correct positions and return a utf-8 string
     string = bytes.decode(string, 'utf-8')
-
+    combining = ''
+    returnstring = ''
+    while len(string) != 0:
+        if string[0] not in combiningchars:
+            returnstring += string[0]
+            string = string[1:]
+            if len(combining) > 0:
+                returnstring += combining
+                combining = ''
+        else:
+            combining += string[0]
+            sting = sting[1:]
+    return(returnstring)
 
 def changecharset(truncatedbytes):
 #This will change the character set and return
@@ -86,7 +98,7 @@ def utfcodelookup(byte):
     utfchar = charset[hex(ord(byte))[2:].upper]
     if utfchar == None:
         return(returnval)
-    while len(utfchar) > 2:
+    while len(utfchar) > 0:
         twochars = int('0x' + utfchar[0:2], base = 16)
         returnval += bytes([twochars])
         utfchar = utfchar[2:]
@@ -103,7 +115,7 @@ def asiadecode(asiabytes):
             utfbytes = bytes('', 'utf-8')
             asiabytes = asiabytes[3:]
         else:
-            while len(utfchar) > 2:
+            while len(utfchar) > 0:
                 twochars = int('Ox' + utfchar[0:2], base = 16)
                 utfbytes += bytes([twochars])
                 utfchar = utfchar[2:]
