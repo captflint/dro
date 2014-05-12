@@ -24,6 +24,9 @@ def convertmarc8(marcbytes):
             if G0 == Ascii and marcbytes[0] <= 127:
                 utfstring += bytes([marcbytes[0]])
                 marcbytes = marcbytes[1:]
+            elif marcbytes[0] == int('0x20', base = 16):
+                utfstring += bytes([0x20])
+                marcbytes = marcbytes[1:]
             elif G0 == Asiadict:
                 marcbytes = asiadecode(marcbytes)
             else:
