@@ -11,3 +11,4 @@ test = MARCrecord()
 test.raw_marc21 = marcfile
 test.parse_marc21()
 test.display()
+test.buildrecord()

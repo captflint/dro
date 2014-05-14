@@ -10,6 +10,8 @@ class MARCrecord:
         self.record = []
         self.leader = Leader()
         self.ismarc8 = False
+        self.newrecord = []
+        self.fieldstring = ""
 
     def unicodec(self, bites):
         if self.ismarc8:
@@ -99,6 +101,28 @@ class MARCrecord:
                     else:
                         print('\t', getsubtag(item[0], sub[0]))
                         print('\t\t', sub[1], '\n')
+
+    def buildrecord(self):
+        sortlist = []
+        for dexnum in range(0, len(self.record)):
+            sortlist.append((self.record[dexnum][0], dexnum))
+        sortlist.sort()
+        for f in sortlist:
+            self.newrecord.append(self.record[f[1]])
+        self.record = self.newrecord
+        self.fieldstring = self.stringifylist(self.record)
+        print(self.fieldstring)
+
+    def stringifylist(self, tsil):
+        returnstring = ""
+        for x in range(0, len(tsil)):
+            if type(tsil[x]) is str:
+                returnstring += tsil[x]
+            elif type(tsil[x]) is list:
+                returnstring += self.stringifylist(tsil[x])
+            else:
+                return("stringify error")
+        return(returnstring)
 
 class Leader():
     def __init__(self):
