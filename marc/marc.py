@@ -109,9 +109,18 @@ class MARCrecord:
         sortlist.sort()
         for f in sortlist:
             self.newrecord.append(self.record[f[1]])
-        self.record = self.newrecord
-        self.fieldstring = self.stringifylist(self.record)
-        print(self.fieldstring)
+        for l in self.newrecord:
+            del l[0]
+        for x in range(0, len(self.newrecord)):
+            self.newrecord[x] = self.newrecord[x][0]
+        for item in range(0, len(self.newrecord)):
+            if type(self.newrecord[item]) is list:
+                for x in range(1, len(self.newrecord[item])):
+                    self.newrecord[item][x][0] = '' + self.newrecord[item][x][0]
+                self.newrecord[item][-1][1] += ''
+            else:
+                self.newrecord[item] += ''
+        print(self.stringifylist(self.newrecord))
 
     def stringifylist(self, tsil):
         returnstring = ""
