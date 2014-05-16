@@ -120,7 +120,31 @@ class MARCrecord:
                 self.newrecord[item][-1][1] += ''
             else:
                 self.newrecord[item] += ''
-        print(self.stringifylist(self.newrecord))
+        fields = self.stringifylist(self.newrecord) + ''
+        current = 0
+        start = 0
+        direc = ""
+        for tagtup in sortlist:
+            tag = tagtup[0]
+            length = 1
+            while fields[current] != '':
+                length += 1
+                current += 1
+            length += 1
+            current += 1
+            lendiff = 4 - len(str(length))
+            startdiff = 5 - len(str(start))
+            direc += tag + ('0' * lendiff + str(length)) + ('0' * startdiff + str(start))
+            start += length + 1
+        direc += ''
+        self.leader.encoding = 'a'
+        totallength = 24 + len(direc) + len(fields)
+        totallength = (5 - len(str(totallength))) * '0' + str(totallength)
+        self.leader.record_length = totallength
+        ba = 24 + len(direc)
+        self.leader.base_addr = (5 - len(str(ba))) * '0' + str(ba)
+        self.leader.build()
+        self.raw_marc21 = self.leader.whole_leader + direc + fields
 
     def stringifylist(self, tsil):
         returnstring = ""
@@ -142,16 +166,16 @@ class Leader():
         self.bib_level = "Bibliographic level goes here"
         self.control_type = "Type of control goes here"
         self.encoding = "Character encoding scheme goes here"
-        self.indicator_count = 2 #This value never changes
-        self.sub_code_count = 2 #This value never changes
+        self.indicator_count = '2' #This value never changes
+        self.sub_code_count = '2' #This value never changes
         self.base_addr = "Base address of data goes here"
         self.encoding_level = "Encoding level goes here"
         self.descriptive_cataloging = "Descriptive cataloging form goes here"
         self.multipart_record_level = "Multipart Resourse Record Level goes here"
-        self.length_of_length = 4 #This value never changes
-        self.length_of_start = 5 #This value never changes
-        self.length_of_implementation = 0 #This value never changes
-        self.undefined = 0 #This value never changes
+        self.length_of_length = '4' #This value never changes
+        self.length_of_start = '5' #This value never changes
+        self.length_of_implementation = '0' #This value never changes
+        self.undefined = '0' #This value never changes
 
     def parse(self, raw_leader):
         if type(raw_leader) != str:
@@ -167,3 +191,21 @@ class Leader():
         self.encoding_level = raw_leader[17]
         self.descriptive_cataloging = raw_leader[18]
         self.multipart_record_level = raw_leader[19]
+
+    def build(self):
+        self.whole_leader = self.record_length
+        self.whole_leader += self.record_status
+        self.whole_leader += self.record_type
+        self.whole_leader += self.bib_level
+        self.whole_leader += self.control_type
+        self.whole_leader += self.encoding
+        self.whole_leader += self.indicator_count
+        self.whole_leader += self.sub_code_count
+        self.whole_leader += self.base_addr
+        self.whole_leader += self.encoding_level
+        self.whole_leader += self.descriptive_cataloging
+        self.whole_leader += self.multipart_record_level
+        self.whole_leader += self.length_of_length
+        self.whole_leader += self.length_of_start
+        self.whole_leader += self.length_of_implementation
+        self.whole_leader += self.undefined
